@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=light>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://api2.mubu.com/v3/document_image/7f635b26-72e6-4ba6-9b95-b42dbf641a2f-15002533.jpg">
+  <link rel="icon" href="https://api2.mubu.com/v3/document_image/7f635b26-72e6-4ba6-9b95-b42dbf641a2f-15002533.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="何夜舞月">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="第1章 绪论1.4 算法和算法分析1.4.1 算法 一个算法具有下列5个重要特性： 有穷性，一个算法必须总是（对任何合法的输入值）在执行有穷步之后结束，且每一步都可在有穷时间（在此，有穷的概念并不是纯数学的，而是在实际上合理的，可接受的）内完成。 确定性，算法中的每一条指令必须有确切的含义，读者理解时不会出现二义性。并且在任何条件下，算法只能有唯一的执行路径，即对于相同的输入只能得到相同的输出。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构笔记">
+<meta property="og:url" content="https://heyewuyue1.github.io/2021/11/01/dataStructure/index.html">
+<meta property="og:site_name" content="何夜舞月">
+<meta property="og:description" content="第1章 绪论1.4 算法和算法分析1.4.1 算法 一个算法具有下列5个重要特性： 有穷性，一个算法必须总是（对任何合法的输入值）在执行有穷步之后结束，且每一步都可在有穷时间（在此，有穷的概念并不是纯数学的，而是在实际上合理的，可接受的）内完成。 确定性，算法中的每一条指令必须有确切的含义，读者理解时不会出现二义性。并且在任何条件下，算法只能有唯一的执行路径，即对于相同的输入只能得到相同的输出。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/uV27nWlb3N1ZMQ6.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/M6WxRswAdqnj7ca.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/69isBewjxvopUHO.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/UHki3JtORCQphAL.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/s3aER8FdMuvGKkt.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/oj2zWuXMbPy4Nv6.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/NkuT81SdHqhU7Wz.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/CVRPjf9Y3nzHeS2.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/anzZhXm5O8FtpJf.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/15/hN39cToHlMmjtQX.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/16/heTwUHmM5tYKlG6.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/16/YuhN2ZesOaM84tW.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/16/yD47CTqPWbrf8kj.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/16/TQ6dmfYxPpLaW5t.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/16/8EprLsSmIGkgtuz.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/16/awy7TSIfdPDUjX3.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/16/lO9NUXiJBcTqopn.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/11/16/XZzMBP74in5kbju.jpg">
+<meta property="article:published_time" content="2021-11-01T03:20:34.000Z">
+<meta property="article:modified_time" content="2022-03-11T02:19:19.191Z">
+<meta property="article:author" content="何夜舞月">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i.loli.net/2021/11/15/uV27nWlb3N1ZMQ6.jpg">
+  
+  
+  <title>数据结构笔记 - 何夜舞月</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"heyewuyue1.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>何夜舞月</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="数据结构笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-01 11:20" pubdate>
+        2021年11月1日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      7.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据结构笔记</h1>
+            
+            <div class="markdown-body">
+              <h1 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h1><h2 id="1-4-算法和算法分析"><a href="#1-4-算法和算法分析" class="headerlink" title="1.4 算法和算法分析"></a>1.4 算法和算法分析</h2><h3 id="1-4-1-算法"><a href="#1-4-1-算法" class="headerlink" title="1.4.1 算法"></a>1.4.1 算法</h3><ul>
+<li>一个算法具有下列5个重要特性：<ol>
+<li><strong>有穷性</strong>，一个算法必须总是（对任何合法的输入值）在执行有穷步之后结束，且每一步都可在有穷时间（在此，有穷的概念并不是纯数学的，而是在实际上合理的，可接受的）内完成。</li>
+<li><strong>确定性</strong>，算法中的每一条指令必须有确切的含义，读者理解时不会出现二义性。并且在任何条件下，算法只能有唯一的执行路径，即对于相同的输入只能得到相同的输出。</li>
+<li><strong>可行性</strong>，算法中所描述的操作都是通过已实现的基本运算执行有限次来实现的。</li>
+<li><strong>输入</strong></li>
+<li><strong>输出</strong></li>
+</ol>
+</li>
+</ul>
+<h3 id="1-4-2-算法设计的要求"><a href="#1-4-2-算法设计的要求" class="headerlink" title="1.4.2 算法设计的要求"></a>1.4.2 算法设计的要求</h3><ul>
+<li>通常设计一个“好”的算法应考虑以下目标：<ol>
+<li><strong>正确性</strong>，程序对于<strong>精心选择的典型，苛刻而带有刁难性的</strong>几组输入数据能够得出满足规格说明的结果。（这句话的描述方式让我觉得非常精彩，每次读到它都觉得这本书的写作水平很高）。</li>
+<li><strong>可读性</strong>，算法主要是为了人的阅读与交流，其次才是机器执行。可读性好有助于人对算法的理解；晦涩难懂的程序易于隐藏较多错误，难以调试和被修改。</li>
+<li><strong>健壮性</strong>，当输入数据非法时，算法也能适当地做出反应或进行处理，而不会产生莫名其妙的输出结果。</li>
+<li><strong>效率与低存储量需求</strong>，效率指的是算法执行的时间，存储量指的是算法执行过程中所需要的最大存储空间。</li>
+</ol>
+</li>
+</ul>
+<h3 id="1-4-3-算法效率的度量"><a href="#1-4-3-算法效率的度量" class="headerlink" title="1.4.3 算法效率的度量"></a>1.4.3 算法效率的度量</h3><ul>
+<li><strong>时间复杂度</strong>，是什么怎么算就不多说了，离散上学期也有讲。但需要会算具体语句的<strong>频数</strong>。比如下面代码中<code>a[i,j]=1;</code>被执行了多少次。<figure class="highlight c"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">for</span> (i = <span class="hljs-number">3</span>; i &lt; n; ++i)&#123;<br>    <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt;= <span class="hljs-number">2</span> * i - <span class="hljs-number">4</span>; ++j)&#123;<br>        a[i, j] = <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+外面的<code>for</code>说明里面的循环进行了n-3次，即里面的等差数列共有n-3项。其中第一项为<code>for(j = 0; j &lt;= 2 * 3 - 4; ++j)</code>共3次，第二项5次……所以<code>a[i,j]=1</code>共被执行了：<br>$$<br>  \frac{(3+[3+(n-3-1)\cdot 2])(n-3)}{2}=n^2-4n+3<br>$$<br>次。 </li>
+<li><strong>空间复杂度</strong> </li>
+</ul>
+<h1 id="第2章-线性表"><a href="#第2章-线性表" class="headerlink" title="第2章 线性表"></a>第2章 线性表</h1><ul>
+<li>单链表原地逆置（带头结点）<br>思路很简单，边缘情况稍微有些复杂，细节很多。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(LinkedList L)</span> </span><br><span class="hljs-function"></span>&#123; <br>    LinkedNode j = L-&gt;next, i;<br>    L-&gt;next = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">while</span> (j)&#123;<br>        i = j-&gt;next;<br>        j-&gt;next = L-&gt;next;<br>        L-&gt;next = j;<br>        j = i;<br>    &#125;<br>&#125;    <br></code></pre></td></tr></table></figure>
+待续……</li>
+</ul>
+<h1 id="第3章-栈和队列"><a href="#第3章-栈和队列" class="headerlink" title="第3章 栈和队列"></a>第3章 栈和队列</h1><p>待续……</p>
+<h1 id="第5章-数组和广义表"><a href="#第5章-数组和广义表" class="headerlink" title="第5章 数组和广义表"></a>第5章 数组和广义表</h1><h2 id="5-1-数组和线性表的关系以及数组的运算"><a href="#5-1-数组和线性表的关系以及数组的运算" class="headerlink" title="5.1 数组和线性表的关系以及数组的运算"></a>5.1 数组和线性表的关系以及数组的运算</h2><ul>
+<li>数组的特点：<ol>
+<li>可以认为，d维数组的非边界元素具有d个直接前趋和d个直接后继</li>
+</ol>
+</li>
+</ul>
+<p>（数组当然不止这一个特点，但其他的都很明显，不在此列举）</p>
+<h2 id="5-2-数组的顺序存储结构"><a href="#5-2-数组的顺序存储结构" class="headerlink" title="5.2 数组的顺序存储结构"></a>5.2 数组的顺序存储结构</h2><ul>
+<li>n维数组<br><img src="https://i.loli.net/2021/11/15/uV27nWlb3N1ZMQ6.jpg" srcset="/img/loading.gif" lazyload alt="F4A8194BAC16C0B2601EC5DAB7CA0ED0.jpg"><br>如果对深度学习有些了解的话，可以把n维数组理解为<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/23720923">张量</a>。<br>理解了n维数组的本质，再去解决<strong>给定下标计算对应地址</strong>就很简单了。</li>
+</ul>
+<h2 id="5-3-矩阵的压缩存储"><a href="#5-3-矩阵的压缩存储" class="headerlink" title="5.3 矩阵的压缩存储"></a>5.3 矩阵的压缩存储</h2><h3 id="5-3-1-对称矩阵"><a href="#5-3-1-对称矩阵" class="headerlink" title="5.3.1 对称矩阵"></a>5.3.1 对称矩阵</h3><p><img src="https://i.loli.net/2021/11/15/M6WxRswAdqnj7ca.jpg" srcset="/img/loading.gif" lazyload alt="F216CDB5A6D1A99A7101D9F0D5D9DA57.jpg"></p>
+<h3 id="5-3-2-三角矩阵"><a href="#5-3-2-三角矩阵" class="headerlink" title="5.3.2 三角矩阵"></a>5.3.2 三角矩阵</h3><p><img src="https://i.loli.net/2021/11/15/69isBewjxvopUHO.jpg" srcset="/img/loading.gif" lazyload alt="3F519532E08565246B8710E44068C247.jpg"></p>
+<h3 id="5-3-3-带状矩阵"><a href="#5-3-3-带状矩阵" class="headerlink" title="5.3.3 带状矩阵"></a>5.3.3 带状矩阵</h3><p><img src="https://i.loli.net/2021/11/15/UHki3JtORCQphAL.jpg" srcset="/img/loading.gif" lazyload alt="4B13DF10-1A3F-4006-A499-1A47E98DB0E1.png"></p>
+<h3 id="5-3-4-随机稀疏矩阵"><a href="#5-3-4-随机稀疏矩阵" class="headerlink" title="5.3.4 随机稀疏矩阵"></a>5.3.4 随机稀疏矩阵</h3><ul>
+<li><p><strong>三元组表</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAXSIZE 1000 <span class="hljs-comment">//设定非零元素最大值</span></span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>  &#123;</span><br>    <span class="hljs-keyword">int</span> i, j;<br>    ElemType e;<br>&#125;Triple;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span><br>    Triple data[MAXSIZE+<span class="hljs-number">1</span>]; <span class="hljs-comment">//三元组表，data[0]未用</span><br>    <span class="hljs-keyword">int</span> mu, nu, tu; <span class="hljs-comment">//行数、列数、非零元个数</span><br>&#125;TSMatrix;<br></code></pre></td></tr></table></figure></li>
+<li><p>快速转置<br><img src="https://i.loli.net/2021/11/15/s3aER8FdMuvGKkt.jpg" srcset="/img/loading.gif" lazyload alt="A5FC6335CEB3FDF2669D5A45E9C8ACCA.jpg"><br>其中的num只需要遍历一次三元组表就可以得到，cpot可以通过num计算得到，所以时间复杂度是$o(n+t)$。</p>
+</li>
+</ul>
+<p>接下来这两个东西稍微看一下就可</p>
+<ul>
+<li><p>行逻辑连接的表<br><img src="https://i.loli.net/2021/11/15/oj2zWuXMbPy4Nv6.jpg" srcset="/img/loading.gif" lazyload alt="3F38980CF1792EB233EFBC6AD2A2EC05.jpg"></p>
+</li>
+<li><p>十字链表<br><img src="https://i.loli.net/2021/11/15/NkuT81SdHqhU7Wz.jpg" srcset="/img/loading.gif" lazyload alt="D16EFD521700CD4D585D38D493374D93.jpg"></p>
+</li>
+</ul>
+<h2 id="5-4-广义表"><a href="#5-4-广义表" class="headerlink" title="5.4 广义表"></a>5.4 广义表</h2><ol>
+<li><p>广义表的相关表示方法和术语<br><img src="https://i.loli.net/2021/11/15/CVRPjf9Y3nzHeS2.jpg" srcset="/img/loading.gif" lazyload alt="6B6A81B2F0E340A5C638C28AF7102903.jpg"><br>注意：表尾无论是什么东西，都要用括号括起来。如果表尾什么都没有，那也要把它括起来()；如果表尾的元素是一个空表，那也要把它括起来(())；如果表尾只有一个元素，那也要把它括起来(a)。</p>
+</li>
+<li><p>广义表的存储结构</p>
+<ol>
+<li>头尾链表</li>
+</ol>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// ATOM==0:原子；LIST==1：子表</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> &#123;</span>ATOM, LIST&#125; ElemTag;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">GLNode</span>&#123;</span><br>    ElemTag  tag;<br>    <span class="hljs-class"><span class="hljs-keyword">union</span> &#123;</span><br>        AtomType  atom;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span><br>            <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">GLNode</span>  *<span class="hljs-title">hp</span>, *<span class="hljs-title">tp</span>;</span><br>        &#125;ptr;<br>    &#125;<br>&#125;*GList1;<br></code></pre></td></tr></table></figure>
+<p> 结构体里面套联合再套结构体，要看懂。<br> <img src="https://i.loli.net/2021/11/15/anzZhXm5O8FtpJf.jpg" srcset="/img/loading.gif" lazyload alt="7CFB8063D13743F5D06DED4E54946B5D.jpg"></p>
+<ol start="2">
+<li>扩展的线性表</li>
+</ol>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// ATOM==0:原子；LIST==1：子表</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> &#123;</span>ATOM, LIST&#125; ElemTag;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">GLNode</span>&#123;</span><br>    ElemTag  tag;<br>    <span class="hljs-class"><span class="hljs-keyword">union</span> &#123;</span><br>        AtomType  atom;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span><br>            <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">GLNode</span>  *<span class="hljs-title">hp</span>;</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">GLNode</span>  *<span class="hljs-title">tp</span>;</span><br>&#125;*GList2;<br></code></pre></td></tr></table></figure>
+<p> 个人认为这种存储方式更符合直觉。<br> <img src="https://i.loli.net/2021/11/15/hN39cToHlMmjtQX.jpg" srcset="/img/loading.gif" lazyload alt="D3E16E0DF91FFB5B9E0C85E19A0A372B.jpg"></p>
+</li>
+<li><p>求广义表的深度</p>
+<ul>
+<li><p>思路1：表的深度=表中所有元素的深度的最大值+1</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">GListDepth</span><span class="hljs-params">(GList1 L)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (!L)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">//空表</span><br>    <span class="hljs-keyword">if</span> (L-&gt;tag == ATOM)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">//单原子</span><br>    <span class="hljs-keyword">for</span> (max = <span class="hljs-number">0</span>, pp = L; pp; pp = pp-&gt;ptr.tp)<br>    &#123;<br>        dep = GListDepth(pp-&gt;ptr.hp);<br>        <span class="hljs-keyword">if</span> (dep &gt; max)<br>            max = dep;<br>    &#125;<br>    <span class="hljs-keyword">return</span> max + <span class="hljs-number">1</span>;<br>&#125; <span class="hljs-comment">//GListDepth</span><br></code></pre></td></tr></table></figure>
+<p>注意7-12行，是如何遍历一个头尾链表的。</p>
+</li>
+<li><p>思路2：表的深度=max(表头的深度+1, 表尾的深度)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">GListDepth</span><span class="hljs-params">(GList1 L)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (!L)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">//空表</span><br>    <span class="hljs-keyword">if</span> (L-&gt;tag == ATOM)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">//单原子</span><br>    dep1 = GListDepth(L-&gt;ptr.hp) + <span class="hljs-number">1</span>;<br>    dep2 = GListDepth(L-&gt;ptr.tp);<br>    <span class="hljs-keyword">if</span> (dep1 &gt; dep2)<br>        <span class="hljs-keyword">return</span> dep1;<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">return</span> dep2;<br>&#125; <span class="hljs-comment">//GListDepth</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>复制广义表</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function">Status <span class="hljs-title">CopyGList</span><span class="hljs-params">(GList1 &amp;T, GList1 L)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (!L)<br>        T = <span class="hljs-literal">NULL</span>; <span class="hljs-comment">//复制空表</span><br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        T = (GList1)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(GLNode));<br>        <span class="hljs-keyword">if</span> (!T)<br>            <span class="hljs-built_in">exit</span>(OVERFLOW);<br>        T-&gt;tag = L-&gt;tag;<br>        <span class="hljs-keyword">if</span> (L-&gt;tag == ATOM)<br>            T-&gt;atom = L-&gt;atom; <span class="hljs-comment">//复制单原子</span><br>        <span class="hljs-keyword">else</span><br>        &#123;<br>            CopyGList(T-&gt;ptr.hp, L-&gt;ptr.hp);<br>            CopyGList(T-&gt;ptr.tp, L-&gt;ptr.tp);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> OK;<br>&#125; <span class="hljs-comment">//CopyGList</span><br></code></pre></td></tr></table></figure>
+<p>这个算法又一次体现出了递归的妙处：这个函数似乎并没有显式的写出该如何去创建一个新的子表的步骤，但这却是它自己本身要做的事情。所以在看到15，16行的时候，其实从另一个角度上明白了，一个广义表无论括号是怎么嵌套的，这都属于他的逻辑结构，只有里面有字母表示的元素才是有实际意义的。</p>
+</li>
+</ol>
+<h1 id="第6章-树和二叉树"><a href="#第6章-树和二叉树" class="headerlink" title="第6章 树和二叉树"></a>第6章 树和二叉树</h1><h2 id="6-1-树的结构定义和基本操作"><a href="#6-1-树的结构定义和基本操作" class="headerlink" title="6.1 树的结构定义和基本操作"></a>6.1 树的结构定义和基本操作</h2><ul>
+<li><strong>结点的层次</strong> 表示该结点在树中的相对位置。根为第一层，其它的结点依次下推；若某结点在第L层上，则其孩子在第L+1层上。</li>
+<li><strong>堂兄弟</strong> 双亲在同一层的结点互为堂兄弟。</li>
+<li><strong>树的深(高)度</strong> 树中结点的最大层次。</li>
+<li><strong>有序树</strong> 树中各结点的子树从左至右是有次序的，不能互换。否则，称为无序树。</li>
+<li><strong>路径长度</strong> 从树中某结点Ni出发，能够“自上而下地”通过树中结点到达结点Nj，则称Ni到Nj存在一条路径，- 路径长度等于这两个结点之间的分支数。</li>
+<li><strong>树的路径长度</strong> 从根到每个结点的路径长度之和。</li>
+<li><strong>森林</strong> 是m(m&gt;0)棵互不相交的树的集合。</li>
+</ul>
+<h2 id="6-2-二叉树"><a href="#6-2-二叉树" class="headerlink" title="6.2 二叉树"></a>6.2 二叉树</h2><ul>
+<li>满二叉树和完全二叉树<br><img src="https://i.loli.net/2021/11/16/heTwUHmM5tYKlG6.jpg" srcset="/img/loading.gif" lazyload alt="0122CE3A1F3616FE25A5E0A8E17D4FB4.jpg"></li>
+<li>二叉树的性质<ol>
+<li>二叉树的第i层上至多有$2^{i-1}$($i\geq 1$)个结点。</li>
+<li>深度为k的二叉树至多有$2^{k-1}$个结点($k\geq 1$)。</li>
+<li>对任何一棵二叉树T，如果其终端结点数为$n_0$，度为2的结点数为$n_2$，则$n_0=n_2+1$。</li>
+<li>具有n个结点的完全二叉树的深度为 $\lfloor \log 2n\rfloor +1$。</li>
+<li>一棵具有n个结点的完全二叉树(又称顺序二叉树)，对其结点按层从上至下(每层从左至右)进行1至n的编号，则对任一结点$i$($1\leq i\leq n$)有：<ol>
+<li>若$i\gt 1$，则i的双亲是$\lfloor i/2\rfloor$；若$i=1$，则$i$是根，无双亲。</li>
+<li>若$2i\leq n$，则i的左孩子是2i；否则，$i$无左孩子。</li>
+<li>若$2i+1\leq n$，则i的右孩子是$2i+1$；否则，$i$无右孩子。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>二叉树的存储结构<ul>
+<li>顺序存储<ol>
+<li>按照层序存储，遇到空位存0；</li>
+<li>只存存在的节点，但是每个节点要记录它的左右孩子的索引；</li>
+<li>只存存在的节点，但是每个节点要记录它的双亲节点的索引。</li>
+</ol>
+</li>
+<li>链式存储<ol>
+<li>二叉链表（左右孩子）</li>
+<li>三叉链表（左右孩子，双亲）</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-3-二叉树的遍历"><a href="#6-3-二叉树的遍历" class="headerlink" title="6.3 二叉树的遍历"></a>6.3 二叉树的遍历</h2><ul>
+<li><p>目的：非线性结构$\rightarrow$线性结构</p>
+</li>
+<li><p>先序遍历，中序遍历，后序遍历<br><img src="https://i.loli.net/2021/11/16/YuhN2ZesOaM84tW.jpg" srcset="/img/loading.gif" lazyload alt="3B1FB7A3B106E7BA2B6CCF6E9896D490.jpg"><br>思路比较简单，主要关注思考题部分和代码实现。</p>
+</li>
+<li><p>思考：如何利用两种遍历序列确定一个二叉树<br>先序序列: ABCDEFGH<br>中序序列: BDCEAFHG<br>复原过程如下，务必自己动手画一遍，找一下感觉<br><img src="https://i.loli.net/2021/11/16/yD47CTqPWbrf8kj.jpg" srcset="/img/loading.gif" lazyload alt="209DEC03C82CD3880E068692BE4B7C8E.jpg"></p>
+</li>
+<li><p>算法实现<br>下面的所有算法都要牢记于脑，内化于心，达到闭上眼睛就能有一张在二叉树上遍历的动图的程度。</p>
+<ol>
+<li>先序遍历<br>递归实现<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C">Preorder(BiTree bt)<br>&#123;<br>    <span class="hljs-keyword">if</span> (bt != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        visite(bt);<br>        Preorder(bt-&gt;lc);<br>        Preorder(bt-&gt;rc);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+改进的递归算法<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C">Preorder2(BiTree bt)<br>&#123;<br>    visite(bt);<br>    <span class="hljs-keyword">if</span> (bt-&gt;lc != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        Preorder2(bt-&gt;lc);<br>    &#125;<br>    <span class="hljs-keyword">if</span> (bt-&gt;rc != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        Preorder2(bt-&gt;rc);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+消除尾递归的算法<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C">Preorder3(BiTree bt)<br>&#123;<br>    <span class="hljs-keyword">while</span> (bt != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        visite(bt);<br>        Preorder3(bt-&gt;lc);<br>        bt = bt-&gt;rc;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+ <strong>非递归算法</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C">Preorder4(Bitree bt)<br>&#123;<br>    inistack(s);<br>    p = bt;<br>    push(s, <span class="hljs-literal">NULL</span>);<br>    <span class="hljs-keyword">while</span> (p != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        visite(p);<br>        <span class="hljs-keyword">if</span> (p-&gt;rc != <span class="hljs-literal">NULL</span>)<br>        &#123;<br>            push(s, p-&gt;rc);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (p-&gt;lc != <span class="hljs-literal">NULL</span>)<br>            p = p-&gt;lc;<br>        <span class="hljs-keyword">else</span><br>            p = pop(s);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+先在栈里铺垫一个NULL<br>然后每次循环过来，先visit自己<br>然后如果自己的右支不是NULL就入栈<br>然后如果自己的左支不是NULL就变成自己的左支；如果自己的左支是NULL就变成出栈元素<br>直到自己变成NULL。</li>
+<li>中序遍历<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C">Inorder(BiTree bt)<br>&#123;<br>    <span class="hljs-keyword">if</span> (bt != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        Inorder(bt-&gt;lc);<br>        visite(bt);<br>        Inorder(bt-&gt;rc);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>后序遍历<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs C">Postorder(BiTree bt)<br>&#123;<br>    <span class="hljs-keyword">if</span> (bt != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        Postorder(bt-&gt;lc);<br>        Postorder(bt-&gt;rc);<br>        visite(bt);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>层序遍历<br>类似广度优先搜索<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C">Levelorder(BiTreptr bt)<br>&#123;<br>    iniqueue(q);<br>    <span class="hljs-keyword">if</span> (bt != <span class="hljs-literal">NULL</span>)<br>        enqueue(q, bt);<br>    <span class="hljs-keyword">while</span> (!empty(q))<br>    &#123;<br>        t = dequeue(q);<br>        visite(t);<br>        <span class="hljs-keyword">if</span> (t-&gt;lc != <span class="hljs-literal">NULL</span>)<br>            enqueue(q, t-&gt;lc);<br>        <span class="hljs-keyword">if</span> (t-&gt;rc != <span class="hljs-literal">NULL</span>)<br>            enqueue(q, t-&gt;rc);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<h2 id="6-4-线索二叉树"><a href="#6-4-线索二叉树" class="headerlink" title="6.4 线索二叉树"></a>6.4 线索二叉树</h2><ul>
+<li><p>通过前面介绍的二叉树可知，遍历二叉树实际上就是将树中所有结点排成一个线性序列（即非线性结构线性化）。在这样的线性序列中，很容易求得某个结点在某种遍历下的直接前趋和后继。然而，有时我们希望不进行遍历，就能很快找到某个结点在某种遍历下的直接前趋和后继。这样，就应该把每个结点的直接前趋和直接后继记录下来。</p>
+</li>
+<li><p>线索二叉树的存储结构<br><img src="https://i.loli.net/2021/11/16/TQ6dmfYxPpLaW5t.jpg" srcset="/img/loading.gif" lazyload alt="4C48FA1CD4C00473547C71A4E30EFEF6.jpg"><br><img src="https://i.loli.net/2021/11/16/8EprLsSmIGkgtuz.jpg" srcset="/img/loading.gif" lazyload alt="562C5844BA89626B95297A9CDCC5B5FC.jpg"></p>
+</li>
+<li><p>但有些结点的Lchild或Rchild指针域指向其左孩子或右孩子，而没有记录其前趋或后继结点信息，要找到该结点的前趋或后继，还要进行一定的搜索。例如，上图A结点的前趋是D（即A结点的左子树的最右下结点）；A结点的后继是F（即A结点的右子树的最左下结点）。那我们该怎么找一个节点的前驱或者后继呢（以中序线索树为例）？</p>
+<ul>
+<li>后继<ol>
+<li>若p-&gt;rtag=1，则p-&gt;rc即为所求；</li>
+<li>若p-&gt;rtag=0，则从其右子沿着左链走到ltag=1的那个结点就是。</li>
+</ol>
+</li>
+<li>前驱<ol>
+<li>若p-&gt;ltag=1，则p-&gt;lc即为所求；</li>
+<li>若p-&gt;ltag=0，则从其左子沿着右链走到rtag=1的那个结点就是。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>二叉树的中序线索化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs C">pre = <span class="hljs-literal">NULL</span>;<br>inthread(BiThrNode p)<br>&#123;<br>    <span class="hljs-keyword">if</span> (p != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        inthread(p-&gt;lc);<br>        <span class="hljs-keyword">if</span> (p-&gt;lc == <span class="hljs-literal">NULL</span>)<br>        &#123;<br>            p-&gt;ltag = <span class="hljs-number">1</span>;<br>            p-&gt;lc = pre;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (pre != <span class="hljs-literal">NULL</span>)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (pre-&gt;rc == <span class="hljs-literal">NULL</span>)<br>            &#123;<br>                pre-&gt;rtag = <span class="hljs-number">1</span>;<br>                pre-&gt;rc = p;<br>            &#125;<br>            pre = p;<br>            inthread(p-&gt;rc);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>先把自己的左支线索化<br>再把自己线索化，线索化自己的时候，看自己有没有左支，要是没有左支就和pre连起来；再看pre有没有右支，要是没有右支，就和自己连起来，然后每次更新一个都要把pre变成自己。<br>然后再线索化自己的右支。<br>其中pre是全局变量。</p>
+</li>
+<li><p>遍历中序线索树</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C">inorder_thlinked(BiThrTree bt)<br>&#123;<br>    p = bt;<br>    <span class="hljs-keyword">while</span> (p != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        <span class="hljs-keyword">while</span> ((p-&gt;ltag == <span class="hljs-number">0</span>)&amp;&amp;(p-&gt;lc != <span class="hljs-literal">NULL</span>))<br>        &#123;<br>            p = p-&gt;lc;<br>            visite(p);<br>            <span class="hljs-keyword">while</span> ((p-&gt;rtag = <span class="hljs-number">1</span>) &amp;&amp; (p-&gt;rc != <span class="hljs-literal">NULL</span>))<br>            &#123;<br>                p = p-&gt;rc;<br>                visite(p);<br>            &#125;<br>            p = p-&gt;rc;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>要中序遍历一个树，一开始肯定先找他的最左下的结点。找到之后visit他，然后再找他的线索，有没有直接指示的后继，有指示的后继就一路visit过去，直到没有的时候，说明当前的树的左支和自己已经visit完了，可以visit它的右支了，就把自己变成自己的右支，然后visit下一轮。</p>
+</li>
+<li><p>在线索二叉树里更新节点<br>  自己讨论各种情况寻找一下规律即可，老师也没有讲具体的算法，以下随便举一例：<br>  在中序线索树中插入结点t，使其称为结点s的右孩子。</p>
+<ol>
+<li>若s无右孩子<ol>
+<li>s的后继变成t的后继</li>
+<li>s成为t的前驱</li>
+<li>t成为s的右孩子</li>
+</ol>
+</li>
+<li>若s有右孩子<ol>
+<li>s的右孩子变成t的右孩子</li>
+<li>s的右孩子的前驱变成t</li>
+<li>t的前驱成为s</li>
+<li>t变成s的右孩子<br>要做几次操作，操作什么顺序，现场要想清楚。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="6-5-哈夫曼树及其应用"><a href="#6-5-哈夫曼树及其应用" class="headerlink" title="6.5 哈夫曼树及其应用"></a>6.5 哈夫曼树及其应用</h2><h3 id="6-5-1-术语"><a href="#6-5-1-术语" class="headerlink" title="6.5.1 术语"></a>6.5.1 术语</h3><p><img src="https://i.loli.net/2021/11/16/awy7TSIfdPDUjX3.jpg" srcset="/img/loading.gif" lazyload alt="35018878D5742301764187346F76F44F.jpg"></p>
+<h3 id="6-5-2-建立最优二叉树的方法"><a href="#6-5-2-建立最优二叉树的方法" class="headerlink" title="6.5.2 建立最优二叉树的方法"></a>6.5.2 建立最优二叉树的方法</h3><ol>
+<li>将给定权值从小到大排序成${w_1,w_2,\cdots,w_m}$，生成一个森林$F={T_1,T_2,\cdots,T_m}$，其中$T_i$是一个带权$W_i$的根结点，它的左右子树均空。</li>
+<li>把F中根的权值最小的两棵二叉树T1和T2合并成一棵新的二叉树T：T的左子树是T1，右子树是T2，T的根的权值是T1、T2树根结点权值之和。</li>
+<li>将T按权值大小加入F中，同时从F中删去T1和T2</li>
+<li>重复2.和3. ，直到F中只含一棵树为止，该树即为所求。<br><img src="https://i.loli.net/2021/11/16/lO9NUXiJBcTqopn.jpg" srcset="/img/loading.gif" lazyload alt="60A77ACE9A08C129D70983EEEB653890.jpg"></li>
+</ol>
+<h3 id="6-5-3-哈夫曼树的存储结构"><a href="#6-5-3-哈夫曼树的存储结构" class="headerlink" title="6.5.3 哈夫曼树的存储结构"></a>6.5.3 哈夫曼树的存储结构</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C">Const m = 结点数目；(m = <span class="hljs-number">2</span>n - <span class="hljs-number">1</span>) <br><span class="hljs-keyword">typedef</span> struct<br>&#123;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> weight;<br>    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> parent, lch, rch;<br>&#125; HTNode;<br><br>Typedef HTNode HuffmanTree[m];<br><br>HuffmanTree ht;<br></code></pre></td></tr></table></figure>
+
+<p>每个节点存自己的权值，左子右子和双亲。顺序存储。</p>
+<h3 id="6-5-4-哈夫曼树的应用"><a href="#6-5-4-哈夫曼树的应用" class="headerlink" title="6.5.4 哈夫曼树的应用"></a>6.5.4 哈夫曼树的应用</h3><ul>
+<li><p>哈夫曼编码<br><img src="https://i.loli.net/2021/11/16/XZzMBP74in5kbju.jpg" srcset="/img/loading.gif" lazyload alt="E93F171F9274BDDBD41103BE83B1D53A.jpg"></p>
+</li>
+<li><p>哈夫曼编码的特点</p>
+<ol>
+<li>哈夫曼编码是不等长编码</li>
+<li><strong>哈夫曼编码是前缀编码，即任一字符的编码都不是另一字符编码的前缀</strong></li>
+<li>哈夫曼编码树中没有度为1的结点。若叶子结点的个数为n，则哈夫曼编码树的结点总数为 2n-1</li>
+<li>发送过程：根据由哈夫曼树得到的编码表送出字符数据</li>
+<li>接收过程：按左0、右1的规定，从根结点走到一个叶结点，完成一个字符的译码。反复此过程，直到接收数据结束</li>
+</ol>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/19/csapp/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机系统基础笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/28/digitalLogicSystemMidTerm/">
+                        <span class="hidden-mobile">数字逻辑与数字系统笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://blog-api-cj6zp2ml0-heyewuyue1.vercel.app/","path":"window.location.pathname","placeholder":"发表神谕","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,663 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=light>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://api2.mubu.com/v3/document_image/7f635b26-72e6-4ba6-9b95-b42dbf641a2f-15002533.jpg">
+  <link rel="icon" href="https://api2.mubu.com/v3/document_image/7f635b26-72e6-4ba6-9b95-b42dbf641a2f-15002533.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="何夜舞月">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="新学期开始营业 计算机网络第一章 引论1.2 网络硬件 按照传输技术分类，分为两种：  点到点（point-to-point） 在诸多路由中找到一条最好的路径 只有一个发送方和接收方   广播（broadcasting） 一台机器向所有机器发送消息 接受的其余所有机器先检查地址字段，如果自己的地址就是就是这个消息的目的地，就处理此消息，否则忽略     按照传输距离分类：  1米：个域网（PAN）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络">
+<meta property="og:url" content="https://heyewuyue1.github.io/2022/03/02/ComputerNetwork/index.html">
+<meta property="og:site_name" content="何夜舞月">
+<meta property="og:description" content="新学期开始营业 计算机网络第一章 引论1.2 网络硬件 按照传输技术分类，分为两种：  点到点（point-to-point） 在诸多路由中找到一条最好的路径 只有一个发送方和接收方   广播（broadcasting） 一台机器向所有机器发送消息 接受的其余所有机器先检查地址字段，如果自己的地址就是就是这个消息的目的地，就处理此消息，否则忽略     按照传输距离分类：  1米：个域网（PAN）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/690ed93c-17fa-4c89-9fe2-8522c077ee89-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/6de5b5f2-befc-4461-88b0-75807addf1f3-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/59fca9d6-221c-44f0-967a-bc364de2afcf-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/97610a0c-a6cf-40b4-b028-5647e6ec34e0-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/8ebb9c8e-4d61-42bc-ada0-c7d393a4d9b2-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/28f122d9-29ca-48fb-af6b-f4f88882a623-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/239eeac1-77df-4d38-b18c-49dad7ea147b-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/86d51c21-5ea3-4341-ad7f-90dff6accbff-15002533.jpg">
+<meta property="article:published_time" content="2022-03-02T08:58:09.000Z">
+<meta property="article:modified_time" content="2022-03-12T02:57:46.185Z">
+<meta property="article:author" content="何夜舞月">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://api2.mubu.com/v3/document_image/690ed93c-17fa-4c89-9fe2-8522c077ee89-15002533.jpg">
+  
+  
+  <title>计算机网络 - 何夜舞月</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"heyewuyue1.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>何夜舞月</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="计算机网络">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-02 16:58" pubdate>
+        2022年3月2日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.2k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">计算机网络</h1>
+            
+            <div class="markdown-body">
+              <p>新学期开始营业</p>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="第一章-引论"><a href="#第一章-引论" class="headerlink" title="第一章 引论"></a>第一章 引论</h2><h3 id="1-2-网络硬件"><a href="#1-2-网络硬件" class="headerlink" title="1.2 网络硬件"></a>1.2 网络硬件</h3><ul>
+<li><p>按照传输技术分类，分为两种：</p>
+<ul>
+<li><strong>点到点（point-to-point）</strong><ul>
+<li>在诸多路由中找到一条最好的路径</li>
+<li>只有一个发送方和接收方</li>
+</ul>
+</li>
+<li><strong>广播（broadcasting）</strong><ul>
+<li>一台机器向所有机器发送消息</li>
+<li>接受的其余所有机器先检查地址字段，如果自己的地址就是就是这个消息的目的地，就处理此消息，否则忽略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>按照传输距离分类：</p>
+<ul>
+<li>1米：个域网（PAN）</li>
+<li>10米～1千米：局域网（LAN）</li>
+<li>10千米：城域网（MAN）</li>
+<li>100千米～1000千米：广域网（W）</li>
+<li>10000千米：互联网（Internet）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>有趣的事情：当”internet”一词首字母小写的时候，指的是一堆互联的机器，也就是互联网；而当这一词首字母大写的时候（即”Interney”），特指的就是链接世界上所有机器的因特网。因特网是一种特殊的互联网。</p>
+</blockquote>
+<h3 id="1-3-网络软件"><a href="#1-3-网络软件" class="headerlink" title="1.3 网络软件"></a>1.3 网络软件</h3><h4 id="1-3-1-协议层次结构"><a href="#1-3-1-协议层次结构" class="headerlink" title="1.3.1 协议层次结构"></a>1.3.1 协议层次结构</h4><p><img src="https://api2.mubu.com/v3/document_image/690ed93c-17fa-4c89-9fe2-8522c077ee89-15002533.jpg" srcset="/img/loading.gif" lazyload alt="协议层次结构"></p>
+<ul>
+<li><p>第n-1层的协议为第n层提供服务的接口，可以理解为一种封装。所以在保证提供的服务不变的情况下，第n-1层协议的实现细节可以任意改变。</p>
+</li>
+<li><p>两台机器进行交流的时候，并不是直接从一个机器的第n层传输到另一个机器的第n层，而是从一个机器的第n层到第n-1层，再到第n-2层，直到最底层，传输到另一台机器，再通过协议一层层恢复到第n层。</p>
+</li>
+<li><p>层和协议的集合被称为<strong>网络体系结构</strong>。</p>
+</li>
+</ul>
+<p>下面分析一下上图的消息传输过程：<br>    1. 一个应用程序在第5层产生了一个消息（M），交由第4层。<br>    2. 第4层为这个消息加上了一个头（$H_4$），该头包含了一些控制信息（如地址），然后交由第3层。<br>    3. 第3层将第4层的内容进行分割，因为通常情况下一次传输的消息长度是被限制的，而第4层传来的消息可能过于长，所以第三层将这些消息分割为更小的<strong>包</strong>（packet）。然后再为每个更小的包加上一个头，其中可能包含这些包的次序信息。然后交由第2层。<br>    4. 第二层除了在每个包的前面加上了一个头，还在每个包的结尾处加上了一个尾（T）。最后交由第一层进行传输。</p>
+<h4 id="1-3-2-层次设计问题"><a href="#1-3-2-层次设计问题" class="headerlink" title="1.3.2 层次设计问题"></a>1.3.2 层次设计问题</h4><ul>
+<li>可靠性：网络传输线路本身由并不可靠的组件构成，所以要保证可靠性是非常关键的问题。首先可以考虑的是一种优秀的编码方案可以检错和纠错（离散下群码有说）。然后就是自动智能的修改信息传输的路由途径。</li>
+<li>可扩展性：网络功能逐渐复杂，网络规模逐渐扩大。如人口过多手机号不够用或者城市过大找不到家这类的问题。一个解决方案：层和协议</li>
+<li>资源分配：该给谁什么时候分配多少带宽，什么样的服务质量（QoS），什么样的即时水平。</li>
+<li>网络安全</li>
+</ul>
+<h4 id="1-3-3-面向连接和无连接的服务"><a href="#1-3-3-面向连接和无连接的服务" class="headerlink" title="1.3.3 面向连接和无连接的服务"></a>1.3.3 面向连接和无连接的服务</h4><ul>
+<li><strong>面向连接的服务</strong>（connection-oriented service）：这种服务是模拟电话系统的，一方提起电话拨打号码，另一方提起电话应答。在网络中双方和传递过程中的媒介通常会提前商量好要求的最长消息长度，服务质量等。</li>
+<li><strong>无连接服务</strong>（connectionless service）：这种服务是模拟邮政系统的，每一个发送的报文都带有完整的地址信息，通过系统的中间路由自己寻找路径到达目的地。这一行为与之前和之后的报文都无关，一般情况下先发送的报文会先到达目的地，但因为网络状况的不同，不同批次的报文并不总是和发送顺序一样的到达目的地的。</li>
+<li>可靠的和不可靠的服务：可靠与不可靠和是否面向连接无关。<br><img src="https://api2.mubu.com/v3/document_image/6de5b5f2-befc-4461-88b0-75807addf1f3-15002533.jpg" srcset="/img/loading.gif" lazyload alt="各种网络服务"><br>从上图发现，一般要求顺序正确的都采用面向连接的服务，不要求顺序的都采用无连接的服务。</li>
+</ul>
+<h3 id="1-3-4-服务原语"><a href="#1-3-4-服务原语" class="headerlink" title="1.3.4 服务原语"></a>1.3.4 服务原语</h3><p>一系列用于交流的指令。</p>
+<h3 id="1-3-5-协议和服务的关系"><a href="#1-3-5-协议和服务的关系" class="headerlink" title="1.3.5 协议和服务的关系"></a>1.3.5 协议和服务的关系</h3><p><strong>服务</strong>是指某一层向他上一层提供的原语（操作），不涉及这些操作是如何定义的，服务的对象是层。</p>
+<p><strong>协议</strong>与服务的具体实现有关，它们对用户是完全不可见的，协议的对象是数据包。</p>
+<h2 id="第二章-物理层"><a href="#第二章-物理层" class="headerlink" title="第二章 物理层"></a>第二章 物理层</h2><h3 id="2-1-数据通信的理论基础"><a href="#2-1-数据通信的理论基础" class="headerlink" title="2.1 数据通信的理论基础"></a>2.1 数据通信的理论基础</h3><h4 id="2-1-1-数据通信的性能指标"><a href="#2-1-1-数据通信的性能指标" class="headerlink" title="2.1.1 数据通信的性能指标"></a>2.1.1 数据通信的性能指标</h4><p><em>基础概念</em></p>
+<ul>
+<li><p><strong>信道（Channel）</strong>：传输信息的媒体</p>
+</li>
+<li><p><strong>数据率（Bit Rate）</strong>：数据传输速率（bps）</p>
+<blockquote>
+<p>=1秒/每一个高电平或低电平持续的时间</p>
+</blockquote>
+</li>
+<li><p><strong>波特（Baud）</strong>：码元传输速率</p>
+<blockquote>
+<p>=$(\log_2V)$bps，其中V是信号的电平级数。如果传输的信号只有高电平（5V）代表1，低电平（0V）代表0，那么电平级数就是2，此时波特速率=比特速率；如果传输的信号有0V-255V共256个电平级数，相当于一个单位的信息代表了之前8个0或1的信息量，此时波特速率就是8倍的比特速率。</p>
+</blockquote>
+</li>
+<li><p><strong>传播速度（Propagation Speed）</strong>：通信线路上，信号单位时间内传播的距离。光速：$3\times 10^8$m/s；铜线：$2\times 10^8$m/s。</p>
+</li>
+<li><p><strong>带宽（Bandwidth）</strong>：信号占用的频率范围（Hz）</p>
+</li>
+<li><p><strong>信道容量（Channel Capacity）</strong>：信道的最大数据率，防止低配置的机器被数据淹没。</p>
+</li>
+<li><p><strong>吞吐量（Throughput）</strong>：网络容量的度量，表示单位时间内网络可以传送的数据位数（后常用包作为单位）</p>
+</li>
+<li><p><strong>误码率BER（Bit Error Rate）</strong>：信道传输可靠性指标</p>
+<blockquote>
+<p>P=传送错的位数/传送总位数</p>
+</blockquote>
+</li>
+<li><p><strong>时延（Delay）</strong>：从向网络中发送数据块的第一比特开始，到最后一位数据被接收所经历的时间</p>
+<blockquote>
+<p><mark>时延=传播时延+发送时延</mark>+处理时延+排队时延<br><mark>传播时延 = 距离/传播速度</mark><br><mark>发送时延 = 包比特量/数据率</mark></p>
+</blockquote>
+</li>
+<li><p><strong>单工通信（Simplex）</strong>：数据传输只能单向进行（FM广播）</p>
+</li>
+<li><p><strong>半双工通信（Half-deplex）</strong>：可以交替地（不同时地）进行双向通信（对讲机）</p>
+</li>
+<li><p><strong>全双工通信（Full-duplex）</strong>：可以同时进行双向通信（电话）</p>
+</li>
+<li><p><strong>并行通信（Parallel transmission）</strong><br><img src="https://api2.mubu.com/v3/document_image/59fca9d6-221c-44f0-967a-bc364de2afcf-15002533.jpg" srcset="/img/loading.gif" lazyload alt="并行通信"></p>
+</li>
+<li><p><strong>串行通信（Serial transmission）</strong><br><img src="https://api2.mubu.com/v3/document_image/97610a0c-a6cf-40b4-b028-5647e6ec34e0-15002533.jpg" srcset="/img/loading.gif" lazyload alt="串行通信"><br>串行通信又分为：</p>
+<ul>
+<li><strong>异步通信（Asynchronous Transmission）</strong><br><img src="https://api2.mubu.com/v3/document_image/8ebb9c8e-4d61-42bc-ada0-c7d393a4d9b2-15002533.jpg" srcset="/img/loading.gif" lazyload alt="异步通信"><ul>
+<li>独立时钟（传输只需要一来一回两条线和地线，共3条）</li>
+<li>以字符为单位进行传输</li>
+<li>发送两个字符之间的间隔是任意的</li>
+<li>接收方依靠字符中的起始位和停止位同步</li>
+<li>成本低，近距离低速传输</li>
+</ul>
+</li>
+<li>**同步通信（Synchoronous Transmission）<br><img src="https://api2.mubu.com/v3/document_image/28f122d9-29ca-48fb-af6b-f4f88882a623-15002533.jpg" srcset="/img/loading.gif" lazyload alt="同步通信"><ul>
+<li>以时钟信号线对传输的数据线上的信号进行比特同步（传输需要一来一回两条线，时钟两条线，地线一条，共5条线）</li>
+<li>以数据块，帧或分组为单位传输</li>
+<li>成本高，远距离高速传输</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-1-2-带宽有限的信号"><a href="#2-1-2-带宽有限的信号" class="headerlink" title="2.1.2 带宽有限的信号"></a>2.1.2 带宽有限的信号</h4><p>传输字母’b’的例子<br><img src="https://api2.mubu.com/v3/document_image/239eeac1-77df-4d38-b18c-49dad7ea147b-15002533.jpg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>假设在我们的例子中，比特率为b比特/秒，那么传输8比特（一次发送一个比特）就需要8/b秒（周期T），一次谐波的频率就是b/8Hz（频率f），在人为引入的截止频率是3000的情况下，最大谐波数（$a_n$，$b_n$的角标能取到几）为3000/(b/8)，即24000/b。<br><img src="https://api2.mubu.com/v3/document_image/86d51c21-5ea3-4341-ad7f-90dff6accbff-15002533.jpg" srcset="/img/loading.gif" lazyload></li>
+<li>需要注意的是，<mark>带宽</mark>一词，有时指的是频率（Hz）就像上文所说的那样，有时指的是一个信道的最大数据速率（bps）。需要根据上下文语境判断。</li>
+</ul>
+<h4 id="2-1-3-信道的最大数据速率"><a href="#2-1-3-信道的最大数据速率" class="headerlink" title="2.1.3 信道的最大数据速率"></a>2.1.3 信道的最大数据速率</h4><ul>
+<li><strong>尼奎斯特（Nyquist）定理</strong>：<br>$$<br>  C = 2B\log_2V<br>$$<br>其中B为带宽（Hz），V为电平级数。C是算出来的最大数据速率（比特/秒）</li>
+<li><strong>香农（Shannon）定理</strong>：<br>$$<br>  C = 2B\log_2(1+S/N)<br>$$<br>其中S/N是信噪比，一般用分贝表示<br>$$<br>  (S/N)_{db} = 10\times \log_{10} (S/N)<br>$$</li>
+</ul>
+<h3 id="2-2-引导性传输介质"><a href="#2-2-引导性传输介质" class="headerlink" title="2.2 引导性传输介质"></a>2.2 引导性传输介质</h3><h4 id="2-2-1-磁介质"><a href="#2-2-1-磁介质" class="headerlink" title="2.2.1 磁介质"></a>2.2.1 磁介质</h4><ul>
+<li>把信息录入到磁带里，用货运方式运过去。</li>
+</ul>
+<h4 id="2-2-2-双绞线"><a href="#2-2-2-双绞线" class="headerlink" title="2.2.2 双绞线"></a>2.2.2 双绞线</h4><ul>
+<li><p>之所以将两根铜线缠绕在一起，是因为两根行的线会构成一个很好的天线。当两根线绞在一起后，不同电线产生的干扰波会相互抵消，从而能显著降低电线的辐射。信号通常以两根电线的电压差来承载，这样对外部噪声有更好的免疫力</p>
+</li>
+<li><p>到6类为止，所有的双绞线都称为非屏蔽双绞线(UTP, Unshielded Twisted Pair)，这些双绞线仅由导线和绝缘层简单地构成。相对应地，7类双绞线在每对双绞线外面加了个屏蔽层，然后在整个线缆外面再加一个屏蔽层(内层的是塑料保护套)。屏蔽层能够减弱外部干扰和来自附近线缆的串扰，从而满足苛刻的性能规范要求。</p>
+</li>
+</ul>
+<h4 id="2-2-3-同轴电缆"><a href="#2-2-3-同轴电缆" class="headerlink" title="2.2.3 同轴电缆"></a>2.2.3 同轴电缆</h4><p>后面的太多了，感觉不关键，到时候有空再说。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/02/ComputerArchitecture/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机组成原理</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/12/basicPrinciplesofMarxism/">
+                        <span class="hidden-mobile">马克思主义基本原理复习笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://blog-api-cj6zp2ml0-heyewuyue1.vercel.app/","path":"window.location.pathname","placeholder":"发表神谕","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
