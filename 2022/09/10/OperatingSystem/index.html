@@ -16,21 +16,26 @@
   <meta name="author" content="何夜舞月">
   <meta name="keywords" content="">
   
-    <meta name="description" content="计算机组成原理第一章 计算机系统概论1.2 计算机的发展简史1.2.4 计算机的性能指标 主频&#x2F;时钟周期：CPU的工作节拍受主时钟控制，主时钟是不断产生固定频率的钟。主时钟的频率叫做CPU的主频（f）度量单位为MHz或GHz（吉赫兹）；主频的倒数被称为时钟周期（T）度量单位是$\mu s$，$ns$。 CPU执行时间$$CPU执行时间&#x3D;CPU时钟周期数\times CPU时钟周期$$ CPI：表示">
+    <meta name="description" content="第一章 介绍1.2 计算机系统组织1.2.1 计算机系统操作 I&#x2F;O设备可以和CPU同时工作  每一类I&#x2F;O设备都有自己的控制器  每一个控制器都有一个缓冲区  CPU将数据在缓冲区和内存之间移动  I&#x2F;O操作将数据从I&#x2F;O设备移动到缓冲区  控制器通过中断告知CPU自己已经完成了I&#x2F;O操作。  中断的类型  trap: trap类型的中断因软件产生，程序执行过程中出现错误（算数移除，访存越界）或">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机组成原理">
-<meta property="og:url" content="https://heyewuyue1.github.io/2022/03/02/ComputerArchitecture/index.html">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="https://heyewuyue1.github.io/2022/09/10/OperatingSystem/index.html">
 <meta property="og:site_name" content="何夜舞月">
-<meta property="og:description" content="计算机组成原理第一章 计算机系统概论1.2 计算机的发展简史1.2.4 计算机的性能指标 主频&#x2F;时钟周期：CPU的工作节拍受主时钟控制，主时钟是不断产生固定频率的钟。主时钟的频率叫做CPU的主频（f）度量单位为MHz或GHz（吉赫兹）；主频的倒数被称为时钟周期（T）度量单位是$\mu s$，$ns$。 CPU执行时间$$CPU执行时间&#x3D;CPU时钟周期数\times CPU时钟周期$$ CPI：表示">
+<meta property="og:description" content="第一章 介绍1.2 计算机系统组织1.2.1 计算机系统操作 I&#x2F;O设备可以和CPU同时工作  每一类I&#x2F;O设备都有自己的控制器  每一个控制器都有一个缓冲区  CPU将数据在缓冲区和内存之间移动  I&#x2F;O操作将数据从I&#x2F;O设备移动到缓冲区  控制器通过中断告知CPU自己已经完成了I&#x2F;O操作。  中断的类型  trap: trap类型的中断因软件产生，程序执行过程中出现错误（算数移除，访存越界）或">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-02T09:03:20.000Z">
-<meta property="article:modified_time" content="2022-09-10T10:16:54.788Z">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/0b9538b9-99d7-4fa9-b4ce-4e09df661a2e-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/196fcb9d-ab73-4f9a-b469-5597801a2a89-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/d2e6d7af-7924-49b4-b7a2-af2b9296020d-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/feda3304-787c-4e8e-8b69-704db8e9de7c-15002533.jpg">
+<meta property="article:published_time" content="2022-09-10T10:15:19.000Z">
+<meta property="article:modified_time" content="2022-09-10T12:51:56.787Z">
 <meta property="article:author" content="何夜舞月">
-<meta property="article:tag" content="计算机组成原理">
+<meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://api2.mubu.com/v3/document_image/0b9538b9-99d7-4fa9-b4ce-4e09df661a2e-15002533.jpg">
   
   
-  <title>计算机组成原理 - 何夜舞月</title>
+  <title>操作系统 - 何夜舞月</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -188,7 +193,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="计算机组成原理">
+            <span class="h2" id="subtitle" title="操作系统">
               
             </span>
 
@@ -198,8 +203,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-02 17:03" pubdate>
-        2022年3月2日 下午
+      <time datetime="2022-09-10 18:15" pubdate>
+        2022年9月10日 晚上
       </time>
     </span>
   
@@ -209,7 +214,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      442 字
+      1.2k 字
     </span>
   
 
@@ -218,7 +223,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      4 分钟
     </span>
   
 
@@ -247,23 +252,111 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">计算机组成原理</h1>
+            <h1 style="display: none">操作系统</h1>
             
             <div class="markdown-body">
-              <h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h1><h2 id="第一章-计算机系统概论"><a href="#第一章-计算机系统概论" class="headerlink" title="第一章 计算机系统概论"></a>第一章 计算机系统概论</h2><h3 id="1-2-计算机的发展简史"><a href="#1-2-计算机的发展简史" class="headerlink" title="1.2 计算机的发展简史"></a>1.2 计算机的发展简史</h3><h4 id="1-2-4-计算机的性能指标"><a href="#1-2-4-计算机的性能指标" class="headerlink" title="1.2.4 计算机的性能指标"></a>1.2.4 计算机的性能指标</h4><ul>
-<li><strong>主频/时钟周期</strong>：CPU的工作节拍受主时钟控制，主时钟是不断产生固定频率的钟。主时钟的频率叫做CPU的主频（f）度量单位为MHz或GHz（吉赫兹）；主频的倒数被称为时钟周期（T）度量单位是$\mu s$，$ns$。</li>
-<li><strong>CPU执行时间</strong><br>$$<br>CPU执行时间=CPU时钟周期数\times CPU时钟周期<br>$$</li>
-<li><strong>CPI</strong>：表示每条指令需要的时钟周期数<br>$$<br>CPI=执行某段程序需要的时钟周期数\div 这段程序的指令数<br>$$</li>
-<li><strong>MIPS</strong>：平均每秒执行多少百万指令数<br>$$<br>MIPS=指令数\div (程序执行时间\times 10^6)<br>$$</li>
-<li><strong>FLOPS</strong>：每秒执行浮点操作的次数<br>$$<br>FLOPS=程序中浮点操作的次数\div 程序执行时间<br>$$</li>
+              <h1 id="第一章-介绍"><a href="#第一章-介绍" class="headerlink" title="第一章 介绍"></a>第一章 介绍</h1><h2 id="1-2-计算机系统组织"><a href="#1-2-计算机系统组织" class="headerlink" title="1.2 计算机系统组织"></a>1.2 计算机系统组织</h2><h3 id="1-2-1-计算机系统操作"><a href="#1-2-1-计算机系统操作" class="headerlink" title="1.2.1 计算机系统操作"></a>1.2.1 计算机系统操作</h3><ul>
+<li><p>I/O设备可以和CPU同时工作</p>
+</li>
+<li><p>每一类I/O设备都有自己的控制器</p>
+</li>
+<li><p>每一个控制器都有一个缓冲区</p>
+</li>
+<li><p>CPU将数据在缓冲区和内存之间移动</p>
+</li>
+<li><p>I/O操作将数据从I/O设备移动到缓冲区</p>
+</li>
+<li><p>控制器通过<mark>中断</mark>告知CPU自己已经完成了I/O操作。</p>
+</li>
+<li><p>中断的类型</p>
+<ul>
+<li>trap: trap类型的中断因<strong>软件</strong>产生，程序执行过程中出现错误（算数移除，访存越界）或用户请求时会发生此类型的中断。</li>
+<li>interrupt: interrupt类型的中断因<strong>硬件</strong>产生。I/O完成，计时器到时，硬件故障时会发生此类型的中断。</li>
 </ul>
-<h3 id="1-3-计算机的硬件"><a href="#1-3-计算机的硬件" class="headerlink" title="1.3 计算机的硬件"></a>1.3 计算机的硬件</h3><ol>
-<li>运算器：完成算数和逻辑运算操作，也称为数据通路</li>
-<li>存储器：存放程序和数据</li>
-<li>控制器：根据取得的指令向其他部件发出控制信号，完成指令规定操作</li>
-<li>输入/输出设备：完成人与计算机的相互通信</li>
+</li>
+<li><p>中断发生时要：</p>
+<ol>
+<li>启动中断服务程序</li>
+<li>保存现场</li>
+<li>屏蔽其他中断</li>
 </ol>
-<h2 id="第二章-运算方法和运算器"><a href="#第二章-运算方法和运算器" class="headerlink" title="第二章 运算方法和运算器"></a>第二章 运算方法和运算器</h2>
+</li>
+<li><p><strong>操作系统是由中断驱动的</strong>（换言之，操作系统从不自己主动做事情）。</p>
+</li>
+<li><p>处理中断</p>
+<ol>
+<li>CPU保存寄存器状态和程序计数器</li>
+<li>判断发生了哪种中断</li>
+<li>调用对应的代码段处理中断</li>
+</ol>
+</li>
+<li><p>中断循环</p>
+<ol>
+<li>处理器在取下一条指令之前，先判断有没有中断</li>
+<li>若没有中断，则继续取下一条指令执行当前程序</li>
+<li>若有中断，暂停现有程序，运行中断处理程序</li>
+</ol>
+</li>
+<li><p>中断时间线<br>  挺好的一张图，看懂就好<br>  <img src="https://api2.mubu.com/v3/document_image/0b9538b9-99d7-4fa9-b4ce-4e09df661a2e-15002533.jpg" srcset="/img/loading.gif" lazyload alt="中断时间线"></p>
+</li>
+</ul>
+<h3 id="1-2-2-存储结构"><a href="#1-2-2-存储结构" class="headerlink" title="1.2.2 存储结构"></a>1.2.2 存储结构</h3><p>计组那一套</p>
+<ul>
+<li>分级存储<ul>
+<li>主存</li>
+<li>第二存储</li>
+<li>磁盘</li>
+<li>磁带</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-3-I-O结构"><a href="#1-2-3-I-O结构" class="headerlink" title="1.2.3 I/O结构"></a>1.2.3 I/O结构</h3><ol>
+<li>Programmed I/O（有规划的I/O，我自己起的名字）<br> <img src="https://api2.mubu.com/v3/document_image/196fcb9d-ab73-4f9a-b469-5597801a2a89-15002533.jpg" srcset="/img/loading.gif" lazyload alt="Programmed I/O"><ul>
+<li>CPU没有拿到它想要的那一个word之前，就一直等着。一直等I/O设备的status变成可用，然后给它读了那一个word，然后才结束。</li>
+</ul>
+</li>
+<li>Interrupt-Driven I/O（中断驱动的I/O）<br> <img src="https://api2.mubu.com/v3/document_image/d2e6d7af-7924-49b4-b7a2-af2b9296020d-15002533.jpg" srcset="/img/loading.gif" lazyload alt="Interrupt-Driven I/O"><ul>
+<li>CPU给I/O设备一个“我要用你了”的信号，然后就去做别的事情。等I/O设备准备好了（或者出现了故障），会中断CPU的进程，然后为CPU做它想要做的事情。</li>
+<li>同步I/O：I/O工作开始之后，一直等到I/O完成，控制权才返还给用户。</li>
+<li>异步I/O：I/O工作开始之后，控制权不等到I/O完成就返还给用户。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>在实际的I/O工作开始前，到底是不是在坐等I/O设备可用是区分Programmed I/O和I-D I/O的标准。</p>
+</li>
+<li><p>在I-D I/O中，是否坐等I/O工作完成，是区分同步和异步I/O的标准。</p>
+</li>
+<li><p>有两个东西方便实现上述功能</p>
+<ol>
+<li>设备状态表：设备处于什么状态</li>
+<li>系统调用：操作系统要怎么用设备</li>
+</ol>
+</li>
+<li><p>DMA(Direct Memory Access)</p>
+<ul>
+<li>高速（与存储器读写速度相近的）I/O设备可以通过DMA一块一块的直接进行读写内存操作，中途不加CPU的干预</li>
+<li>CPU只在I/O开始和结束时介入。</li>
+<li>每次读写一块数据时，CPU只在结束时被中断一次。</li>
+<li>期间CPU可以做其他事情。</li>
+</ul>
+</li>
+<li><p>I/O通道控制程序</p>
+<ul>
+<li>与DMA类似</li>
+<li>CPU通过I/O指令控制I/O设备</li>
+<li>I/O指令包括：通道号，I/O设备号，通道程序的首地址</li>
+<li>通道程序由若干通道指令组成</li>
+<li>当CPU需要一系列I/O操作时，只需要向I/O通道发送一条I/O指令即可。</li>
+<li>通道程序举例<br><img src="https://api2.mubu.com/v3/document_image/feda3304-787c-4e8e-8b69-704db8e9de7c-15002533.jpg" srcset="/img/loading.gif" lazyload alt="通道程序举例"><ul>
+<li>P：=1时代表是通道程序的最后一条指令</li>
+<li>R：=1时代表这一条指令是处理当前记录的最后一条指令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             </div>
             <hr>
             <div>
@@ -273,7 +366,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                      <a class="hover-with-bg" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
                     
                   </div>
                 
@@ -290,18 +383,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/12/FormalLanguageAndAutomata/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">形式语言与自动机</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/02/ComputerNetwork/">
-                        <span class="hidden-mobile">计算机网络</span>
+                      <a href="/2022/03/12/FormalLanguageAndAutomata/">
+                        <span class="hidden-mobile">形式语言与自动机</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
