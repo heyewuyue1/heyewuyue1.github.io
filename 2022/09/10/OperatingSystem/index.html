@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://api2.mubu.com/v3/document_image/feda3304-787c-4e8e-8b69-704db8e9de7c-15002533.jpg">
 <meta property="og:image" content="https://api2.mubu.com/v3/document_image/70f00b8b-83b6-4091-a8d6-27e8015248d3-15002533.jpg">
 <meta property="article:published_time" content="2022-09-10T10:15:19.000Z">
-<meta property="article:modified_time" content="2022-09-19T01:44:52.584Z">
+<meta property="article:modified_time" content="2022-09-24T08:57:55.251Z">
 <meta property="article:author" content="何夜舞月">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
@@ -215,7 +215,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k 字
+      4k 字
     </span>
   
 
@@ -224,7 +224,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      13 分钟
     </span>
   
 
@@ -414,6 +414,140 @@
 <li>进程通信</li>
 <li>防止死锁</li>
 </ul>
+</li>
+</ul>
+<h1 id="第二章-操作系统结构"><a href="#第二章-操作系统结构" class="headerlink" title="第二章 操作系统结构"></a>第二章 操作系统结构</h1><h2 id="2-2-用户与系统交互的方式"><a href="#2-2-用户与系统交互的方式" class="headerlink" title="2.2 用户与系统交互的方式"></a>2.2 用户与系统交互的方式</h2><ul>
+<li>CLI 命令行<ul>
+<li>MS-DOS在内核中实现，内置命令</li>
+<li>Windows和UNIX在系统程序中实现</li>
+<li>Windows的命令控制界面<ul>
+<li>运算符：&amp;，&amp;&amp;，||，（），；，%1</li>
+<li>批处理文件：.bat和.cmd</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GUI 图形化界面</li>
+<li>操作系统汉化<ul>
+<li>CCDOS：第一台长城机汉字操作系统</li>
+<li>HHBIOS：CCDOS的进阶版</li>
+<li>UCDOS：企业研发，性能优良，灵活方便</li>
+<li>中文之星：Windows外围汉化代表</li>
+</ul>
+</li>
+<li>语音控制（VUI）</li>
+<li>图像</li>
+<li>手势</li>
+<li>脑机</li>
+</ul>
+<h2 id="2-3-系统调用"><a href="#2-3-系统调用" class="headerlink" title="2.3 系统调用"></a>2.3 系统调用</h2><ul>
+<li>对于系统提供的服务的编程式交互<ul>
+<li>例：写一个打开a文件，把a文件中的内容写入b文件</li>
+</ul>
+</li>
+<li>通常使用高级编程语言</li>
+<li>多数由高级程序提供的接口（API）实现，而不是直接进行系统调用</li>
+<li>API会提供一系列的函数方便编程者使用</li>
+<li>常见的API：<ul>
+<li>Windows API：Windows</li>
+<li>POSIX API：UNIX，LINUX，macOS</li>
+<li>Java：JVM</li>
+</ul>
+</li>
+<li>API比直接进行系统调用有着更好的<strong>迁移性</strong>，且屏蔽了一些不需要的细节。</li>
+<li>API<br>Windows API：<figure class="highlight c"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * @retrun BOOL</span><br><span class="hljs-comment"> * @name ReadFile</span><br><span class="hljs-comment"> * @param file The file to be read</span><br><span class="hljs-comment"> * @param buffer A buffer where the data will be written or read from</span><br><span class="hljs-comment"> * @param bytes to read The number of bytes to be read next time</span><br><span class="hljs-comment"> * @param bytes read The number of bytes read to the buffer during the last read</span><br><span class="hljs-comment"> * @param ovl Indicates if overlapped I/O is used</span><br><span class="hljs-comment">*/</span><br><span class="hljs-function">BOOL <span class="hljs-title">ReadFile</span><span class="hljs-params">(</span></span><br><span class="hljs-params"><span class="hljs-function">  HANDLE file,</span></span><br><span class="hljs-params"><span class="hljs-function">  LPVOID buffer,</span></span><br><span class="hljs-params"><span class="hljs-function">  DWORD bytes To Read,</span></span><br><span class="hljs-params"><span class="hljs-function">  LPDWORD bytes Read</span></span><br><span class="hljs-params"><span class="hljs-function">  LPOVERLAPPED ovl</span></span><br><span class="hljs-params"><span class="hljs-function">)</span></span>;<br></code></pre></td></tr></table></figure>
+UNIX and Linux：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span><br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * @retrun ssize_t</span><br><span class="hljs-comment"> * @name read</span><br><span class="hljs-comment"> * @param fd The file descriptor to be read</span><br><span class="hljs-comment"> * @param buf A buffer where the data will be read into</span><br><span class="hljs-comment"> * @param conunt The maximum number of bytes to be read into the buffer</span><br><span class="hljs-comment">*/</span><br><span class="hljs-function"><span class="hljs-keyword">ssize_t</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">int</span> fd, <span class="hljs-keyword">void</span> *buf, <span class="hljs-keyword">size_t</span> count)</span></span>;<br></code></pre></td></tr></table></figure></li>
+<li>支持运行时的系统会专门有一个<strong>系统调用交互</strong><ul>
+<li>有一个系统调用索引表，每一个系统调用都对应一个数字</li>
+<li>系统调用交互会：<ul>
+<li>屏蔽API里的系统调用</li>
+<li>启用OS中必要的系统调用</li>
+<li>返回结果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用户并不知道系统调用是怎么做的，他们只需要知道怎么调用API和获得返回值就可以了。</li>
+<li>向系统调用传递参数的三种方式<ol>
+<li>寄存器</li>
+<li>内存块</li>
+<li>栈：程序入栈，OS出绽</li>
+</ol>
+</li>
+</ul>
+<h2 id="2-4-系统调用的类型"><a href="#2-4-系统调用的类型" class="headerlink" title="2.4 系统调用的类型"></a>2.4 系统调用的类型</h2><ol>
+<li>进程控制</li>
+<li>文件管理</li>
+<li>设备管理</li>
+<li>信息维护：获取，设置系统时间，文件属性</li>
+<li>交流：进程间</li>
+<li>保护：设置资源权限</li>
+</ol>
+<h2 id="2-5-系统程序"><a href="#2-5-系统程序" class="headerlink" title="2.5 系统程序"></a>2.5 系统程序</h2><ol>
+<li>文件管理</li>
+<li>状态信息</li>
+<li>文件编辑</li>
+<li>编程语言支持</li>
+<li>程序加载和执行</li>
+<li>用户，进程，系统间通信</li>
+<li>系统工具</li>
+<li>后台服务：自启动</li>
+</ol>
+<h2 id="2-6-操作系统的设计与实现"><a href="#2-6-操作系统的设计与实现" class="headerlink" title="2.6 操作系统的设计与实现"></a>2.6 操作系统的设计与实现</h2><ul>
+<li>并不存在一个完美的解决方案</li>
+<li>不同操作系统的内部原理相差甚远</li>
+<li>从理清目的和特点出发</li>
+<li>受硬件类型，操作系统类型（批处理，时分复用…）影响</li>
+<li>难以具体化目标<ul>
+<li>用户：易用，性能强大，可靠，快速</li>
+<li>系统：易实现，易维护，可靠，高效，可迁移</li>
+<li></li>
+</ul>
+</li>
+<li>设计和实现一个操作系统是软件工程中极具创造性的工作</li>
+<li>将<em>目标（Policy）</em>从<em>手段（Machanism）</em>中分离出来<ul>
+<li>二者分离是实现灵活性的重要途径</li>
+</ul>
+</li>
+<li>操作系统的实现<ul>
+<li>相差甚远</li>
+<li>时间发展顺序：汇编语言————Alogol，PL/1————C，C++</li>
+<li>实际上是多种语言的混杂，底层汇编，主体C，系统程序C/C++，Python，PERL，shell scrpits</li>
+<li>更多的高级语言会导致<ul>
+<li>硬件之间的迁移性好</li>
+<li>运行速度变慢</li>
+</ul>
+</li>
+<li>仿真可以让操作系统运行在非原生的硬件上</li>
+</ul>
+</li>
+<li>影响操作系统性能的重要因素：优秀的数据结构和算法</li>
+<li>只有小部分代码的性能对系统总体性能有至关重要的影响<ul>
+<li>中断处理，I/O处理</li>
+<li>内存管理，CPU管理</li>
+</ul>
+</li>
+<li>在可以正常工作后，优化<strong>瓶颈</strong>：将其转换为等价的汇编语言</li>
+</ul>
+<h2 id="2-7-操作系统结构"><a href="#2-7-操作系统结构" class="headerlink" title="2.7 操作系统结构"></a>2.7 操作系统结构</h2><h2 id="2-9-迁移操作系统"><a href="#2-9-迁移操作系统" class="headerlink" title="2.9 迁移操作系统"></a>2.9 迁移操作系统</h2><ul>
+<li>一个SYSGGEN文件用来描述操作系统所需的硬件参数<ul>
+<li>CPU，内存大小，设备，缓冲区大小</li>
+</ul>
+</li>
+<li>迁移操作系统的方式<ul>
+<li>复制并修改原本操作系统的源代码</li>
+<li>选择之前操作系统库中的部分功能</li>
+<li>配置一个合适的表用来描述系统</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-9-启动操作系统"><a href="#2-9-启动操作系统" class="headerlink" title="2.9 启动操作系统"></a>2.9 启动操作系统</h2><ul>
+<li>Booting：通过加载内核启动计算机</li>
+<li>Bootstrap Program：一小段在ROM中的程序，定位内核，将其加载进内存，启动执行</li>
+<li>两步走<ol>
+<li>bootstrap loader：诊断初始化系统，将boot program写入内存准备执行</li>
+<li>boot program：将整个操作系统加载进内存开始执行</li>
+</ol>
 </li>
 </ul>
 
