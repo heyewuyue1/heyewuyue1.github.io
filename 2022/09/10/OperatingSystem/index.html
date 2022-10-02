@@ -28,8 +28,10 @@
 <meta property="og:image" content="https://api2.mubu.com/v3/document_image/d2e6d7af-7924-49b4-b7a2-af2b9296020d-15002533.jpg">
 <meta property="og:image" content="https://api2.mubu.com/v3/document_image/feda3304-787c-4e8e-8b69-704db8e9de7c-15002533.jpg">
 <meta property="og:image" content="https://api2.mubu.com/v3/document_image/70f00b8b-83b6-4091-a8d6-27e8015248d3-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/2c694e86-f2f9-4c0f-ac73-6db9a161b1da-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/08b88b03-9743-4802-9f4a-3916c4be0772-15002533.jpg">
 <meta property="article:published_time" content="2022-09-10T10:15:19.000Z">
-<meta property="article:modified_time" content="2022-09-24T08:57:55.251Z">
+<meta property="article:modified_time" content="2022-10-02T13:13:56.784Z">
 <meta property="article:author" content="何夜舞月">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
@@ -215,7 +217,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4k 字
+      6.6k 字
     </span>
   
 
@@ -224,7 +226,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13 分钟
+      21 分钟
     </span>
   
 
@@ -416,7 +418,18 @@
 </ul>
 </li>
 </ul>
-<h1 id="第二章-操作系统结构"><a href="#第二章-操作系统结构" class="headerlink" title="第二章 操作系统结构"></a>第二章 操作系统结构</h1><h2 id="2-2-用户与系统交互的方式"><a href="#2-2-用户与系统交互的方式" class="headerlink" title="2.2 用户与系统交互的方式"></a>2.2 用户与系统交互的方式</h2><ul>
+<h1 id="第二章-操作系统结构"><a href="#第二章-操作系统结构" class="headerlink" title="第二章 操作系统结构"></a>第二章 操作系统结构</h1><h1 id="2-1-操作系统提供的功能和服务"><a href="#2-1-操作系统提供的功能和服务" class="headerlink" title="2.1 操作系统提供的功能和服务"></a>2.1 操作系统提供的功能和服务</h1><ol>
+<li>一类用于方便用户使用<ul>
+<li>用户交互，程序执行，I/O，操纵文件，进程间通信，错误检测</li>
+</ul>
+</li>
+<li>一类用于高效执行自己的业务<ul>
+<li>分配资源，统计，保护</li>
+<li>多用户可以通过分配资源来提高效率</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-2-用户与系统交互的方式"><a href="#2-2-用户与系统交互的方式" class="headerlink" title="2.2 用户与系统交互的方式"></a>2.2 用户与系统交互的方式</h2><ul>
 <li>CLI 命令行<ul>
 <li>MS-DOS在内核中实现，内置命令</li>
 <li>Windows和UNIX在系统程序中实现</li>
@@ -471,7 +484,7 @@ UNIX and Linux：<figure class="highlight c"><table><tr><td class="gutter"><pre>
 <li>向系统调用传递参数的三种方式<ol>
 <li>寄存器</li>
 <li>内存块</li>
-<li>栈：程序入栈，OS出绽</li>
+<li>栈：程序入栈，OS出栈</li>
 </ol>
 </li>
 </ul>
@@ -480,7 +493,11 @@ UNIX and Linux：<figure class="highlight c"><table><tr><td class="gutter"><pre>
 <li>文件管理</li>
 <li>设备管理</li>
 <li>信息维护：获取，设置系统时间，文件属性</li>
-<li>交流：进程间</li>
+<li>交流：进程间<ol>
+<li>内存共享：借用内存共享块通信，不需要协助，不方便进程间同步，安全性差，高速量大</li>
+<li>消息传递：用send和receive，包含系统调用，必须提前建立连接，效率较低但是可以保持同步，用于交换信息量较少的数据，安全性好</li>
+</ol>
+</li>
 <li>保护：设置资源权限</li>
 </ol>
 <h2 id="2-5-系统程序"><a href="#2-5-系统程序" class="headerlink" title="2.5 系统程序"></a>2.5 系统程序</h2><ol>
@@ -548,6 +565,272 @@ UNIX and Linux：<figure class="highlight c"><table><tr><td class="gutter"><pre>
 <li>bootstrap loader：诊断初始化系统，将boot program写入内存准备执行</li>
 <li>boot program：将整个操作系统加载进内存开始执行</li>
 </ol>
+</li>
+</ul>
+<h1 id="第三章-进程"><a href="#第三章-进程" class="headerlink" title="第三章 进程"></a>第三章 进程</h1><h2 id="3-1-进程概念"><a href="#3-1-进程概念" class="headerlink" title="3.1 进程概念"></a>3.1 进程概念</h2><ul>
+<li><p>执行中的<strong>程序</strong>叫<strong>进程</strong></p>
+</li>
+<li><p><strong>程序</strong>：静态存储在磁盘上的可执行文件</p>
+</li>
+<li><p><strong>进程</strong>：程序加载进内存开始动态执行成为进程</p>
+</li>
+<li><p>一个进程内包括：</p>
+<ul>
+<li>程序代码</li>
+<li>数据区：全局变量</li>
+<li>堆：动态分配的内存</li>
+<li>栈：临时变量，包括：函数参数，返回地址，局部变量</li>
+<li>当前操作：程序计数器</li>
+</ul>
+</li>
+<li><p>进程在执行过程中会改变状态</p>
+</li>
+<li><p>一个进程总是在以下几个状态之一：</p>
+<ul>
+<li>新创建</li>
+<li>正在执行</li>
+<li>等待：等待某个事件的发生</li>
+<li>就绪：准备加载到一个处理器开始执行</li>
+<li>终止</li>
+</ul>
+</li>
+<li><p>一个处理器只能同时执行一个进程，其他进程都在等待和就绪<br><img src="https://api2.mubu.com/v3/document_image/2c694e86-f2f9-4c0f-ac73-6db9a161b1da-15002533.jpg" srcset="/img/loading.gif" lazyload alt="进程状态"></p>
+</li>
+<li><p>每个进程都由一个进程控制块（PCB）反映</p>
+</li>
+<li><p>一个程序块中包含：</p>
+<ul>
+<li>进程状态</li>
+<li>程序计数器</li>
+<li>CPU寄存器</li>
+<li>CPU给它的规划：优先级，执行队列</li>
+<li>内存管理信息</li>
+<li>统计信息：总共用了多少CPU时间，当前时间片用了多少时间，时间限制是多少…</li>
+<li>I/O信息：打开的文件，分配给进程的I/O设备</li>
+<li>进程ID</li>
+</ul>
+</li>
+<li><p>进程在状态之间转换的时机</p>
+<ul>
+<li>时钟打断：已经执行到了最大时间</li>
+<li>I/O打断</li>
+<li>内存错误：访问到虚拟内存，必须从外存把数据带进来</li>
+<li>异常</li>
+<li>系统调用</li>
+</ul>
+</li>
+<li><p>一个进程中可以有多个<strong>线程</strong></p>
+<ul>
+<li>多个线程可以同时进行</li>
+<li>在PCB中记录多个程序计数器</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-2-进程调度"><a href="#3-2-进程调度" class="headerlink" title="3.2 进程调度"></a>3.2 进程调度</h2><ul>
+<li><p>multiprogramming的目的：最大化CPU利用率</p>
+</li>
+<li><p>时分复用的目的：让用户可以在一个进程执行时与它交互</p>
+</li>
+<li><p>调度队列</p>
+<ul>
+<li>工作队列：系统中所有进程</li>
+<li>就绪队列：系统中所有就绪的进程</li>
+<li>一般用链表存储</li>
+</ul>
+</li>
+<li><p>设备队列：每个设备有一个属于自己的队列，用于记录等着要使用它的进程<br><img src="https://api2.mubu.com/v3/document_image/08b88b03-9743-4802-9f4a-3916c4be0772-15002533.jpg" srcset="/img/loading.gif" lazyload alt="队列图"></p>
+</li>
+<li><p>长周期调度（job scheduler）</p>
+<ul>
+<li>选择进入就绪队列的进程</li>
+<li>不频繁被打断</li>
+<li>长周期调度要控制同时在内存里的进程数量</li>
+</ul>
+</li>
+<li><p>短周期调度（CPU scheduler）</p>
+<ul>
+<li>选择下一个要执行的进程</li>
+<li>频繁被打断</li>
+</ul>
+</li>
+<li><p>进程可以分为以下两类</p>
+<ol>
+<li>绑定I/O的进程</li>
+<li>绑定CPU的进程</li>
+</ol>
+</li>
+<li><p>绑定I/O的进程多了，就会有很多进程卡在等待状态，就绪队列的进程很少，CPU调度不需要做什么工作</p>
+</li>
+<li><p>绑定CPU的进程多了，很多进程都会在就绪状态，设备队列的进程就很少，硬件会大量闲置</p>
+</li>
+<li><p>中周期调度(medium term scheduler)</p>
+<ul>
+<li>将就绪队列和设备队列里的进程换进（到内存）换出（到磁盘），让两个队列比较均衡</li>
+<li>CPU处理的比I/O设备快，所以所有进程可能都在设备队列</li>
+<li>这时候把设备队列里的进程换出，状态变为<strong>挂起等待</strong></li>
+<li>新增两个状态<ol>
+<li><strong>挂起等待</strong></li>
+<li><strong>挂起就绪</strong></li>
+</ol>
+</li>
+<li>换出的原因：<ul>
+<li>CPU需要为一个要执行的进程腾出一些内存空间</li>
+<li>系统怀疑有一个进程产生了异常</li>
+<li>用户主动要求</li>
+<li>一个进程是每过一段固定时间才执行</li>
+<li>父进程要求</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>语境切换<br>每次CPU切换要执行的进程时，要进行语境切换。一个进程的语境存储在PCB里，语境切换包括以下步骤：</p>
+<ol>
+<li>保存处理器的执行环境：包括程序计数器和寄存器状态</li>
+<li>更新当前正在执行的进程PCB</li>
+<li>把PCB挪到它应该去的地方</li>
+<li>选择另一个要执行的进程</li>
+<li>更新要执行的进程的PCB</li>
+<li>更新内存管理数据结构</li>
+<li>恢复要执行的进程的语境</li>
+</ol>
+</li>
+<li><p>语境切换是顶级操作：CPU在这个过程中不做任何实际的工作</p>
+</li>
+<li><p>切换速度取决于硬件</p>
+</li>
+</ul>
+<h2 id="3-3-进程操作"><a href="#3-3-进程操作" class="headerlink" title="3.3 进程操作"></a>3.3 进程操作</h2><h3 id="创建进程"><a href="#创建进程" class="headerlink" title="创建进程"></a>创建进程</h3><ul>
+<li>创建进程的原因<ol>
+<li>执行一项批处理工作</li>
+<li>用户登录</li>
+<li>要打印东西</li>
+<li>被其他进程创建</li>
+</ol>
+</li>
+<li>创建进程的步骤<ol>
+<li>给新进程分配一个ID</li>
+<li>给新进程分配内存空间</li>
+<li>初始化PCB</li>
+<li>进行合适的链接：让需要知道这个进程存在的东西都知道它被创建了，比如把它连进CPU调度链表</li>
+<li>创建别的数据结构：比如一个统计信息表</li>
+<li>确定资源共享方案：共享父进程的所有资源，共享父进程的部分资源，不和父进程共享资源</li>
+<li>当一个进程被创建时，他可能包含着从父进程传给它的初始化参数</li>
+</ol>
+</li>
+<li>执行时的两种可能：<ol>
+<li>与父进程同步执行</li>
+<li>父进程等待他的一些子进程结束后继续执行</li>
+</ol>
+</li>
+<li>地址空间的两种可能：<ol>
+<li>与父进程完全相同</li>
+<li>有一段程序专门加载子进程的地址空间</li>
+</ol>
+</li>
+<li>PPT上的练习</li>
+</ul>
+<h3 id="终止进程"><a href="#终止进程" class="headerlink" title="终止进程"></a>终止进程</h3><ul>
+<li>终止进程的原因<ul>
+<li>正常执行结束</li>
+<li>执行时间超过限制</li>
+<li>内存不可用</li>
+<li>越界访问</li>
+<li>越权操作：尝试写入只读文件</li>
+<li>算数异常：分母为0</li>
+<li>等待（I/O）时间超过最大值</li>
+<li>I/O失败</li>
+<li>错误指令</li>
+<li>越权指令：用户进程试图执行只有内核才能执行的指令</li>
+<li>数据异常：类型不匹配</li>
+<li>操作系统介入：死锁</li>
+<li>父进程终止</li>
+<li>父进程要求子进程终止</li>
+</ul>
+</li>
+<li>进程执行了最后一条指令，请求操作系统删除它<ul>
+<li>将数据还给父进程</li>
+<li>收回分配的资源</li>
+</ul>
+</li>
+<li>父进程要终止子进程的原因<ul>
+<li>子进程用了超出给它分配的内存空间</li>
+<li>分配给子进程的任务已经不再需要了</li>
+<li>父进程自己要终止</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-4-进程间通信"><a href="#3-4-进程间通信" class="headerlink" title="3.4 进程间通信"></a>3.4 进程间通信</h2><ul>
+<li><p><strong>独立进程</strong>不会影响其他进程执行，也不会被其他进程执行影响</p>
+</li>
+<li><p><strong>合作进程</strong>会影响其他进程执行，也会被其他进程执行影响</p>
+</li>
+<li><p>两个基础模型</p>
+<ol>
+<li>共享内存：可以达到通信的最高速度和便利性，可以以内存读写的速度进行通信</li>
+<li>通信管道：适用于数据量小的通信，因为不需要考虑读写冲突；跨计算机通信更好实现</li>
+</ol>
+</li>
+<li><p>共享内存系统——生产者-消费者问题</p>
+<ul>
+<li>一个经典模式：<strong>生产者</strong>进程生产数据，<strong>消费者</strong>进程消费数据</li>
+<li>我们要提供一个缓冲区，让生产者把数据放进来填满，让消费者搬空<ul>
+<li>生产者生产和消费者消费可以同时进行</li>
+<li>两者必须同步（synchorize）</li>
+</ul>
+</li>
+<li>两种缓冲区<ol>
+<li>无界缓冲区</li>
+<li>有界缓冲区：循环队列</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>通信管道——IPC</p>
+<ul>
+<li>通信并同步他们的执行节奏</li>
+<li>建立一个管道，然后通过<code>send()</code>和<code>receive()</code>通信</li>
+<li>管道的介质<ul>
+<li>物理介质：共享内存，硬件总线，网络</li>
+<li>逻辑介质：逻辑属性</li>
+</ul>
+</li>
+<li>直接通信<ul>
+<li>进程之间必须显式指定通信双方的名字</li>
+<li>两个通信进程之间有且仅有一根管道（可单向可双向）</li>
+</ul>
+</li>
+<li>间接通信<ul>
+<li>进程之间依赖邮箱通信，一个进程把数据放到信箱里，另一个进程来取</li>
+<li>一个信箱可能有多个进程使用</li>
+<li>两个进程之间可能用多个信箱</li>
+</ul>
+</li>
+<li>如何杜绝间接通信中的冲突问题<ol>
+<li>最多允许两个进程共享一个信箱</li>
+<li>最多同时允许一个进程调用<code>receive()</code>函数</li>
+<li>让系统随机选择一个接收者，让发送者知道谁拿到了</li>
+</ol>
+</li>
+<li>一个信箱可以被操作系统或者进程占用</li>
+<li>如果这个信箱是被进程创建的<ul>
+<li>这个进程只能用这个信箱接受信息</li>
+<li>别的进程只能往这个信箱发送信息</li>
+</ul>
+</li>
+<li>如果这个信箱是系统创建的：不属于任何进程</li>
+<li>操作系统向进程提供以下几种操作<ul>
+<li>创建和删除一个信箱</li>
+<li>从信箱中接收消息，发送信息到信箱</li>
+</ul>
+</li>
+<li>同步/异步</li>
+<li>限制发送者<ul>
+<li>通道0容量：发送者必须等接收者可以接收的时候才能发</li>
+<li>通道n容量：发送者必须等通道有空闲了再发</li>
+<li>通道无限容量：发送者的发送不受任何限制</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 
