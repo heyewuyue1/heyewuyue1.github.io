@@ -16,22 +16,28 @@
   <meta name="author" content="何夜舞月">
   <meta name="keywords" content="">
   
-    <meta name="description" content="第一章 Introduction1.3 View of Data Data Model 对数据组织与管理&#x2F;使用方式的抽象描述，包括： 数据组织的语法定义，如数据项、数据项间的联系 数据组织的语义定义，如完整性约束   例子： Relation Model（最典型的表格） XML     Levels of Abstraction Physical level: 描述数据实际是怎么存的，一个块多大，">
+    <meta name="description" content="来点传统手写笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库系统原理">
-<meta property="og:url" content="https://heyewuyue1.github.io/2022/09/16/DatabaseSystemConcepts/index.html">
+<meta property="og:title" content="软件工程">
+<meta property="og:url" content="https://heyewuyue1.github.io/2023/04/10/SoftwareEngineer/index.html">
 <meta property="og:site_name" content="何夜舞月">
-<meta property="og:description" content="第一章 Introduction1.3 View of Data Data Model 对数据组织与管理&#x2F;使用方式的抽象描述，包括： 数据组织的语法定义，如数据项、数据项间的联系 数据组织的语义定义，如完整性约束   例子： Relation Model（最典型的表格） XML     Levels of Abstraction Physical level: 描述数据实际是怎么存的，一个块多大，">
+<meta property="og:description" content="来点传统手写笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-16T08:01:43.000Z">
-<meta property="article:modified_time" content="2022-09-19T02:06:47.051Z">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/4a8098c1-88aa-48f5-87f0-c4a9fac204f4-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/b219dda4-b91c-4bec-b00b-a953d49d2952-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/381522e0-6329-4540-bcac-17396d270015-15002533.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/03f82a0e-df55-4d8a-839f-5ecf9f9f1e13-15002533.jpg">
+<meta property="article:published_time" content="2023-04-10T09:54:19.000Z">
+<meta property="article:modified_time" content="2023-04-10T10:00:28.476Z">
 <meta property="article:author" content="何夜舞月">
-<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="学校课程">
+<meta property="article:tag" content="软件工程">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://api2.mubu.com/v3/document_image/4a8098c1-88aa-48f5-87f0-c4a9fac204f4-15002533.jpg">
   
   
   
-  <title>数据库系统原理 - 何夜舞月</title>
+  <title>软件工程 - 何夜舞月</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -209,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数据库系统原理"></span>
+            <span id="subtitle" data-typed-text="软件工程"></span>
           
         </div>
 
@@ -220,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-16 16:01" pubdate>
-          2022年9月16日 下午
+        <time datetime="2023-04-10 17:54" pubdate>
+          2023年4月10日 下午
         </time>
       </span>
     
@@ -233,7 +239,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.2k 字
+          8 字
         
       </span>
     
@@ -245,7 +251,7 @@
         
         
           <!-- compatible with older versions-->
-          4 分钟
+          1 分钟
         
       </span>
     
@@ -283,69 +289,13 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数据库系统原理</h1>
+            <h1 style="display: none">软件工程</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="第一章-Introduction"><a href="#第一章-Introduction" class="headerlink" title="第一章 Introduction"></a>第一章 Introduction</h1><h2 id="1-3-View-of-Data"><a href="#1-3-View-of-Data" class="headerlink" title="1.3 View of Data"></a>1.3 View of Data</h2><ul>
-<li>Data Model<ul>
-<li>对数据组织与管理/使用方式的抽象描述，包括：<ul>
-<li>数据组织的语法定义，如数据项、数据项间的联系</li>
-<li>数据组织的语义定义，如完整性约束</li>
-</ul>
-</li>
-<li>例子：<ul>
-<li>Relation Model（最典型的表格）</li>
-<li>XML</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Levels of Abstraction<ul>
-<li>Physical level: 描述数据<strong>实际</strong>是怎么存的，一个块多大，存在存储器的什么位置，索引。</li>
-<li>Logic level: 描述数据的逻辑关系<figure class="highlight sql"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs sql">type instructor <span class="hljs-operator">=</span> record<br>ID: string;<br>name: string;<br>dept_name: string;<br>salary: <span class="hljs-type">integer</span>;<br><span class="hljs-keyword">end</span>;<br></code></pre></td></tr></table></figure></li>
-<li>View level: 应用层查看到的数据，可以隐藏一些细节，比如数据类型，或者出于隐私考虑隐藏<code>salary</code>字段。</li>
-</ul>
-</li>
-<li>Model, Schema, Instance<ul>
-<li>model: <code>R = &#123;&lt;a1, a2, ..., an&gt;&#125;</code></li>
-<li>schema: <code>Instructor = &lt;ID, name, dept_name, salary&gt;</code></li>
-<li>instance: <code>&lt;2222, Einstein, Physics, 95000&gt;</code></li>
-</ul>
-</li>
-<li>Data Independence<ul>
-<li>物理存储发生变化，调整逻辑模式到内模式的映射，保证逻辑模式不变</li>
-<li>逻辑结构发生变化，调整外模式到逻辑模式的映射，保证外模式不变</li>
-</ul>
-</li>
-</ul>
-<h1 id="第二章-Introduction-to-Relational-Model"><a href="#第二章-Introduction-to-Relational-Model" class="headerlink" title="第二章 Introduction to Relational Model"></a>第二章 Introduction to Relational Model</h1><h2 id="2-1-Relational-Database的结构"><a href="#2-1-Relational-Database的结构" class="headerlink" title="2.1 Relational Database的结构"></a>2.1 Relational Database的结构</h2><ul>
-<li>$R=(A_1, A_2, \cdots, A_n)$ 是一个relation schema</li>
-<li>其中:<ul>
-<li>$A_1, A_2, \cdots, A_n$是attributes</li>
-<li>$A_i$的取值范围是$D_i$，叫做domain</li>
-</ul>
-</li>
-<li>例子：<code>Instructor = &lt;ID, name, dept_name, salary&gt;</code></li>
-<li>由$R$定义的一个instance $r$写作$r(R)$</li>
-<li>表示为一张table</li>
-<li>每一个$r$的元素$t$被称作一个tuple，一个tuple就是表中的一行。</li>
-<li>attribute一般要求要原子化，不可再分。<ul>
-<li>null是每一个的attribute可选值。</li>
-</ul>
-</li>
-<li>行列之间相互独立，交换不同行列之间的顺序没有任何影响</li>
-</ul>
-<h2 id="2-3-Keys"><a href="#2-3-Keys" class="headerlink" title="2.3 Keys"></a>2.3 Keys</h2><ul>
-<li><strong>定义：</strong>对于给定的relation schema$R(A_1, A_2, \cdots,A_n)$，$K$是$R$的一个子集，若对于任意两个tuple$r(R)$，他们在$K$上的attribute都不完全相同，则称$K$是$R$的一个<strong>superkey</strong>。</li>
-<li><strong>定义：candidate key</strong>是最小的$K$。</li>
-<li>primary key（主键）是管理员人为挑选的candidate key</li>
-<li>primary key的值不能为null</li>
-<li>primary key的值被称为primary attribute（主属性）</li>
-<li><strong>定义：</strong>如果一些键在r1中，且是r2的主键，则称这些键是r1参照r2的外键。</li>
-<li>在定义具有外键的r1之前必须先定义r2。</li>
-</ul>
+                <p>来点传统手写笔记</p>
+<p><img src="https://api2.mubu.com/v3/document_image/4a8098c1-88aa-48f5-87f0-c4a9fac204f4-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/b219dda4-b91c-4bec-b00b-a953d49d2952-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/381522e0-6329-4540-bcac-17396d270015-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/03f82a0e-df55-4d8a-839f-5ecf9f9f1e13-15002533.jpg" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -358,7 +308,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">#数据库</a>
+        <a href="/tags/%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B/">#学校课程</a>
+      
+        <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">#软件工程</a>
       
     </div>
   
@@ -370,8 +322,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数据库系统原理</div>
-      <div>https://heyewuyue1.github.io/2022/09/16/DatabaseSystemConcepts/</div>
+      <div>软件工程</div>
+      <div>https://heyewuyue1.github.io/2023/04/10/SoftwareEngineer/</div>
     </div>
     <div class="license-meta">
       
@@ -383,7 +335,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月16日</div>
+          <div>2023年4月10日</div>
         </div>
       
       
@@ -415,18 +367,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/10/SoftwareEngineer/" title="软件工程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">软件工程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/12/CompilationPrinciplesandTechniques/" title="编译原理与技术">
-                        <span class="hidden-mobile">编译原理与技术</span>
+                      <a href="/2022/09/16/DatabaseSystemConcepts/" title="数据库系统原理">
+                        <span class="hidden-mobile">数据库系统原理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
