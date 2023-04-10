@@ -61,8 +61,8 @@
 <meta property="article:published_time" content="2021-10-28T10:49:58.000Z">
 <meta property="article:modified_time" content="2023-04-10T09:55:40.627Z">
 <meta property="article:author" content="何夜舞月">
-<meta property="article:tag" content="数字逻辑与数字系统">
 <meta property="article:tag" content="学校课程">
+<meta property="article:tag" content="数字逻辑与数字系统">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i.loli.net/2021/10/28/6i3wo7tk1bRS5c2.jpg">
   
@@ -270,7 +270,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          8.3k 字
+          8.6k 字
         
       </span>
     
@@ -328,8 +328,8 @@
                 <h1 id="第一章-开关理论基础"><a href="#第一章-开关理论基础" class="headerlink" title="第一章 开关理论基础"></a>第一章 开关理论基础</h1><h2 id="1-1-二进制系统"><a href="#1-1-二进制系统" class="headerlink" title="1.1 二进制系统"></a>1.1 二进制系统</h2><h3 id="1-1-1-连续量和离散量"><a href="#1-1-1-连续量和离散量" class="headerlink" title="1.1.1 连续量和离散量"></a>1.1.1 连续量和离散量</h3><p>电子电路分为模拟电子电路和数字电子电路两大类。<br>模拟电子电路中，数值的度量采用直流电压或电流的<strong>连续</strong>值，通常称为<strong>模拟量</strong>。<br>数字电子电路中，数值的度量采用数字量，它通常由0或1组成的一串二进制数组成，数字量的特点是数值为<strong>离散量</strong>。</p>
 <h2 id="1-2-数制与码制"><a href="#1-2-数制与码制" class="headerlink" title="1.2 数制与码制"></a>1.2 数制与码制</h2><h3 id="1-2-2-进位计数制的相互转换"><a href="#1-2-2-进位计数制的相互转换" class="headerlink" title="1.2.2 进位计数制的相互转换"></a>1.2.2 进位计数制的相互转换</h3><ul>
 <li>10进制转其他进制（以10进制转8进制为例）<ol>
-<li>在整数部分采用<strong>除8取余</strong>的方式进行，除得的余数是对应8进制数的<strong>倒序</strong>。<br><img src="https://i.loli.net/2021/10/28/6i3wo7tk1bRS5c2.jpg" srcset="/img/loading.gif" lazyload alt="6F47FA20-3784-40BD-A997-34C7B8E30CB6.png"></li>
-<li>在小数部分采用<strong>乘8取整</strong>的方式进行，乘得的整数部分是对应8进制小数的<strong>正序</strong>。<br><img src="https://i.loli.net/2021/10/28/evIJt2UunzxPByd.jpg" srcset="/img/loading.gif" lazyload alt="5D49FC5C-3B6A-45D0-AF3D-94C8C5800C76.png"></li>
+<li>在整数部分采用<strong>除8取余</strong>的方式进行，除得的余数是对应8进制数的<strong>倒序</strong>。<br>  <img src="https://i.loli.net/2021/10/28/6i3wo7tk1bRS5c2.jpg" srcset="/img/loading.gif" lazyload alt="6F47FA20-3784-40BD-A997-34C7B8E30CB6.png"></li>
+<li>在小数部分采用<strong>乘8取整</strong>的方式进行，乘得的整数部分是对应8进制小数的<strong>正序</strong>。<br>  <img src="https://i.loli.net/2021/10/28/evIJt2UunzxPByd.jpg" srcset="/img/loading.gif" lazyload alt="5D49FC5C-3B6A-45D0-AF3D-94C8C5800C76.png"></li>
 </ol>
 </li>
 <li>其他进制转10进制：按照权值相加法即可。</li>
@@ -339,7 +339,7 @@
 <h3 id="1-2-3-二进制编码"><a href="#1-2-3-二进制编码" class="headerlink" title="1.2.3 二进制编码"></a>1.2.3 二进制编码</h3><ol>
 <li>二进制码（值域：0~15）<ul>
 <li>自然二进制码：即最正常的二进制数，按照权值进行计算。</li>
-<li>循环码：任何相邻的两个码字（如6和7）之间，仅有一位代码不同，其他位代码相同。循环码的编码不是唯一的，4位循环码就有很多种。下图所示为比较基本的一种。<br><img src="https://i.loli.net/2021/10/28/1HIos9gEM3rhvpm.jpg" srcset="/img/loading.gif" lazyload alt="A4EF0479-EDCB-4935-8A37-E764F3E07CAA.png"></li>
+<li>循环码：任何相邻的两个码字（如6和7）之间，仅有一位代码不同，其他位代码相同。循环码的编码不是唯一的，4位循环码就有很多种。下图所示为比较基本的一种。<br> <img src="https://i.loli.net/2021/10/28/1HIos9gEM3rhvpm.jpg" srcset="/img/loading.gif" lazyload alt="A4EF0479-EDCB-4935-8A37-E764F3E07CAA.png"></li>
 </ul>
 </li>
 <li>二-十进制码（BCD码，值域：0~9）<ul>
@@ -347,7 +347,7 @@
 <li>5421码：这种编码的显著特点是最高位先连续5个1后连续5个0。</li>
 <li>2421码：这种编码的0~4与8421码相同，特点是每位取反后刚好是对9的补码。</li>
 <li>余3码：在8421码的基础上加上0011，特点是执行十进制数相加时能正确的产生进微信号。</li>
-<li>格雷码：与循环码性质一样，但值域是0~9。<br><img src="https://i.loli.net/2021/10/28/j4h5ikvVYGuZPlw.jpg" srcset="/img/loading.gif" lazyload alt="83F5CA9B-0AA9-4F40-ABE0-E9F5B27E6D21.png"></li>
+<li>格雷码：与循环码性质一样，但值域是0~9。<br> <img src="https://i.loli.net/2021/10/28/j4h5ikvVYGuZPlw.jpg" srcset="/img/loading.gif" lazyload alt="83F5CA9B-0AA9-4F40-ABE0-E9F5B27E6D21.png"></li>
 </ul>
 </li>
 </ol>
@@ -358,15 +358,15 @@
 <h2 id="1-4-布尔代数"><a href="#1-4-布尔代数" class="headerlink" title="1.4 布尔代数"></a>1.4 布尔代数</h2><h3 id="1-4-1-布尔代数的基本定律"><a href="#1-4-1-布尔代数的基本定律" class="headerlink" title="1.4.1 布尔代数的基本定律"></a>1.4.1 布尔代数的基本定律</h3><p>此处只列出几条不好记的：</p>
 <ul>
 <li>分配律<ol>
-<li>$A(B+C)=AB+AC$;</li>
-<li>$A+BC=(A+B)(A+C)$。</li>
+<li>$A(B+C)&#x3D;AB+AC$;</li>
+<li>$A+BC&#x3D;(A+B)(A+C)$。</li>
 </ol>
 </li>
 <li>吸收率<ol>
-<li>$A+AB=A$;</li>
-<li>$A(A+B)=A$;</li>
-<li>$A+\overline{A}B=A+B$</li>
-<li>$(A+B)(A+C)=A+BC$</li>
+<li>$A+AB&#x3D;A$;</li>
+<li>$A(A+B)&#x3D;A$;</li>
+<li>$A+\overline{A}B&#x3D;A+B$</li>
+<li>$(A+B)(A+C)&#x3D;A+BC$</li>
 </ol>
 </li>
 </ul>
@@ -377,9 +377,9 @@
 <li>任何一个逻辑函数可以化成一种典型的表达式（相当于离散数学中的主析取范式），这种典型的表达式是一组最小项之和，称为<strong>最小项表达式</strong>。</li>
 </ul>
 </li>
-<li>卡诺图的结构<br><img src="https://i.loli.net/2021/10/28/KCsIEMDn9rJbe34.jpg" srcset="/img/loading.gif" lazyload alt="7ABB69C9-738B-4780-B555-C05ABCD52367.png"></li>
+<li>卡诺图的结构<br><img src="https://i.loli.net/2021/10/28/KCsIEMDn9rJbe34.jpg" srcset="/img/loading.gif" lazyload alt="7ABB69C9-738B-4780-B555-C05ABCD52367.png"><br><em><strong>注意</strong></em> 卡诺图的横轴和纵轴都采用循环码进行编码，不能随意调换顺序。</li>
+<li>卡诺图的有用组合</li>
 </ol>
-<p><em><strong>注意</strong></em> 卡诺图的横轴和纵轴都采用循环码进行编码，不能随意调换顺序。<br>3. 卡诺图的有用组合</p>
 <ul>
 <li>在卡诺图中<strong>几何相邻</strong>的2个，4个，8个元素，也是<strong>逻辑相邻</strong>的。此外，卡诺图的第一行和最后一行，第一列和最后一列也是逻辑相邻的。</li>
 </ul>
@@ -405,7 +405,7 @@
 <li>如图所示，$A$由0变1时，$\overline{A}$会在一个延迟后由1变0。所以存在一个短时间$A$和$\overline{A}$均为1，此时与非门输出0。但是按照逻辑分析，与非门的输出应该恒为1。</li>
 <li>并不是所有情况下都会出现这种状况，如$A$由1变0时，即使$\overline{A}$的变化有延迟，那也不过是出现了$A$和$\overline{A}$均为0的情况，并不会影响与非门恒为1的输出。</li>
 <li>解决方案<ol>
-<li><strong>加选通脉冲</strong>：电路的输入发生变化时不立刻输出，在等待一段时间电路稳定后再输出。用选通脉冲$P$实现这一点，平常选通脉冲$P=0$，要输出时$P=1$。</li>
+<li><strong>加选通脉冲</strong>：电路的输入发生变化时不立刻输出，在等待一段时间电路稳定后再输出。用选通脉冲$P$实现这一点，平常选通脉冲$P&#x3D;0$，要输出时$P&#x3D;1$。</li>
 <li><strong>修改逻辑设计</strong>：通过构造一些特殊的逻辑，消除竞争冒险（比较费劲，主要是要理清逻辑关系，在稍微复杂一点的电路里面很难看出来）。但其实只要在一开始设计的时候，保证电路中各个门的输入端在信号转换时只有一个变量改变状态就可以了。</li>
 </ol>
 </li>
@@ -445,7 +445,7 @@
 <h3 id="2-6-2-加法器"><a href="#2-6-2-加法器" class="headerlink" title="2.6.2 加法器"></a>2.6.2 加法器</h3><ol>
 <li><p>串行加法器<br>由多个全加器（FA）串行连接而成。每一个FA有3个输入：加数$A_i$，被加数$B_i$，低位的进位信号$C_{i-1}$；有2个输出：和数$S_i$，向高位的进位信号$C_i$。然后就这样一个一个的把结果加出来。<br><img src="https://i.loli.net/2021/10/29/nesPgy13c8oTQCb.jpg" srcset="/img/loading.gif" lazyload alt="D3026930FF467C8884B53E32D33556BB.jpg"></p>
 </li>
-<li><p>并行加法器<br>为了提高串行加法器的速度，一次性算出来结果。原理是通过归递推公式得到每位结果和输入之间直接的关系，不再依赖上一级的结果。<br>设$G_i$为进位生成项，$P_i$为进位传递项，即有：<br>$$<br> G_i=A_iB_i,P_i=A_i\oplus B_i \\<br> C_i=G_i+P_iC_{i-1}<br>$$<br>由此递推可得：<br>$$<br> C_1=G_1+P_1C_0 \\<br> C_2=G_2+P_2C_1=G_2+P_2G_1+P_2P_1C_0 \\<br> \vdots \\<br> C_4=G_4+P_4C_3=\cdots \\<br>$$<br>各位和的输出为<br>$$<br> S_i=P_i\oplus C_{i-1}<br>$$<br>如此一来，便可以不用等待的，一次性的把每一位的结果直接通过输入算出来。</p>
+<li><p>并行加法器<br>为了提高串行加法器的速度，一次性算出来结果。原理是通过归递推公式得到每位结果和输入之间直接的关系，不再依赖上一级的结果。<br>设$G_i$为进位生成项，$P_i$为进位传递项，即有：<br>$$<br> G_i&#x3D;A_iB_i,P_i&#x3D;A_i\oplus B_i \\<br> C_i&#x3D;G_i+P_iC_{i-1}<br>$$<br>由此递推可得：<br>$$<br> C_1&#x3D;G_1+P_1C_0 \\<br> C_2&#x3D;G_2+P_2C_1&#x3D;G_2+P_2G_1+P_2P_1C_0 \\<br> \vdots \\<br> C_4&#x3D;G_4+P_4C_3&#x3D;\cdots \\<br>$$<br>各位和的输出为<br>$$<br> S_i&#x3D;P_i\oplus C_{i-1}<br>$$<br>如此一来，便可以不用等待的，一次性的把每一位的结果直接通过输入算出来。</p>
 </li>
 </ol>
 <h2 id="2-7-奇偶校验器"><a href="#2-7-奇偶校验器" class="headerlink" title="2.7 奇偶校验器"></a>2.7 奇偶校验器</h2><h3 id="2-7-1-奇偶校验器的基本原理"><a href="#2-7-1-奇偶校验器的基本原理" class="headerlink" title="2.7.1 奇偶校验器的基本原理"></a>2.7.1 奇偶校验器的基本原理</h3><p><strong>偶数个1，他们的合数总是0；奇数个1，他们的和数总是1。</strong></p>
@@ -454,18 +454,18 @@
 <li><p>锁存器在电路上具有两个稳定的物理状态，所以它们能记忆一位二进制数。它们具有以下特性：</p>
 <ol>
 <li>有两个互补的输出端$Q$和$\overline{Q}$；</li>
-<li>有两个稳定的状态。通常将$Q=1$和$\overline{Q}=0$称为0状态，$Q=0$和$\overline{Q}$称为1状态；</li>
+<li>有两个稳定的状态。通常将$Q&#x3D;1$和$\overline{Q}&#x3D;0$称为0状态，$Q&#x3D;0$和$\overline{Q}$称为1状态；</li>
 <li>在输入信号的作用下，锁存器可以从一个状态转移到另一个状态。</li>
 </ol>
 </li>
-<li><p>我们把输入信号发生变化之前的锁存器状态称为<strong>现态（PS）</strong>，用$Q^n$和$\overline{Q^n}$表示；输入信号发生变化之后所进入的状态称为<strong>次态（NS）</strong>，用$Q^{n+1}$和$\overline{Q^{n+1}}$表示。若用$X$来表示输入信号的集合，则有：<br>$$<br>  Q^{n+1}=f(Q^n,X)<br>$$<br>这个方程被称为锁存器的<strong>次态方程</strong>，又称<strong>现态方程</strong>，也称为<strong>特征方程</strong>。</p>
+<li><p>我们把输入信号发生变化之前的锁存器状态称为<strong>现态（PS）</strong>，用$Q^n$和$\overline{Q^n}$表示；输入信号发生变化之后所进入的状态称为<strong>次态（NS）</strong>，用$Q^{n+1}$和$\overline{Q^{n+1}}$表示。若用$X$来表示输入信号的集合，则有：<br>$$<br>  Q^{n+1}&#x3D;f(Q^n,X)<br>$$<br>这个方程被称为锁存器的<strong>次态方程</strong>，又称<strong>现态方程</strong>，也称为<strong>特征方程</strong>。</p>
 </li>
 </ul>
-<h3 id="3-1-2-基本SR锁存器"><a href="#3-1-2-基本SR锁存器" class="headerlink" title="3.1.2 基本SR锁存器"></a>3.1.2 基本SR锁存器</h3><p><img src="https://i.loli.net/2021/10/30/fSIcMYrhOuCno6B.jpg" srcset="/img/loading.gif" lazyload alt="052DCFC7088771770960D2830C0A576A.jpg"><br>如上图所示：<br>    1. 若$\overline{S}\overline{R}=00$，两个与非门的输出均为1，也就是说$Q^{n+1}=\overline{Q^{n+1}}=1$，不符合互补输出的条件，此时称锁存器的状态是不稳的。在画卡诺图的时候，这一部分对应的方格就可以用$\phi$表示。<br>    2. 若$\overline{S}\overline{R}=11$，此时锁存器将会延续它的上一个状态。比如上一个状态是1，则$Q^n=1,\overline{Q}=0$。此时若$\overline{S}\overline{R}=11$，可知上面的与非门输出为1，下面的与非门输出为0，刚好与上个状态契合。根据对称性可知，这样的性质对上个状态是0的情况依然适用。<br>    3. 若$\overline{S}\overline{R}=01$，此时先看上面的与非门因为有$\overline{S}=0$的存在所以它一定输出1，然后下面的与非门两个输入都是1，所以输出0。此时锁存器的状态将会无条件变为1。<br>    4. 若$\overline{S}\overline{R}=10$，与上一条同理，锁存器状态变为0。</p>
-<p>由此可以总结出SR锁存器的状态方程：<br>$$<br>    Q^{n+1}=\overline{\overline{S}}+\overline{R}Q^n \\<br>    \overline{S}+\overline{R}=1<br>$$<br>SR锁存器的状态转移图如下图所示：<br><img src="https://i.loli.net/2021/10/30/epm3fxNGAbMi98q.jpg" srcset="/img/loading.gif" lazyload alt="9E8B74D1-0363-4E6C-89F7-B49D4CE84662.png"></p>
+<h3 id="3-1-2-基本SR锁存器"><a href="#3-1-2-基本SR锁存器" class="headerlink" title="3.1.2 基本SR锁存器"></a>3.1.2 基本SR锁存器</h3><p><img src="https://i.loli.net/2021/10/30/fSIcMYrhOuCno6B.jpg" srcset="/img/loading.gif" lazyload alt="052DCFC7088771770960D2830C0A576A.jpg"><br>如上图所示：<br>    1. 若$\overline{S}\overline{R}&#x3D;00$，两个与非门的输出均为1，也就是说$Q^{n+1}&#x3D;\overline{Q^{n+1}}&#x3D;1$，不符合互补输出的条件，此时称锁存器的状态是不稳的。在画卡诺图的时候，这一部分对应的方格就可以用$\phi$表示。<br>    2. 若$\overline{S}\overline{R}&#x3D;11$，此时锁存器将会延续它的上一个状态。比如上一个状态是1，则$Q^n&#x3D;1,\overline{Q}&#x3D;0$。此时若$\overline{S}\overline{R}&#x3D;11$，可知上面的与非门输出为1，下面的与非门输出为0，刚好与上个状态契合。根据对称性可知，这样的性质对上个状态是0的情况依然适用。<br>    3. 若$\overline{S}\overline{R}&#x3D;01$，此时先看上面的与非门因为有$\overline{S}&#x3D;0$的存在所以它一定输出1，然后下面的与非门两个输入都是1，所以输出0。此时锁存器的状态将会无条件变为1。<br>    4. 若$\overline{S}\overline{R}&#x3D;10$，与上一条同理，锁存器状态变为0。</p>
+<p>由此可以总结出SR锁存器的状态方程：<br>$$<br>    Q^{n+1}&#x3D;\overline{\overline{S}}+\overline{R}Q^n \\<br>    \overline{S}+\overline{R}&#x3D;1<br>$$<br>SR锁存器的状态转移图如下图所示：<br><img src="https://i.loli.net/2021/10/30/epm3fxNGAbMi98q.jpg" srcset="/img/loading.gif" lazyload alt="9E8B74D1-0363-4E6C-89F7-B49D4CE84662.png"></p>
 <h3 id="3-1-3-门控SR锁存器"><a href="#3-1-3-门控SR锁存器" class="headerlink" title="3.1.3 门控SR锁存器"></a>3.1.3 门控SR锁存器</h3><p><img src="https://i.loli.net/2021/10/30/JVe5vHo8RXpMqau.jpg" srcset="/img/loading.gif" lazyload alt="11C4E368-4DEA-400D-96E5-91E8A3C51FB5.png"></p>
 <ul>
-<li>门控SR锁存器是在普通SR锁存器的基础上改进的产物。当门控信号$EN=1$时，锁存器会发生和普通SR锁存器一样的状态转移；当门控信号$EN=0$时，无论$SR$为什么值，锁存器的状态都不会发生变化。</li>
+<li>门控SR锁存器是在普通SR锁存器的基础上改进的产物。当门控信号$EN&#x3D;1$时，锁存器会发生和普通SR锁存器一样的状态转移；当门控信号$EN&#x3D;0$时，无论$SR$为什么值，锁存器的状态都不会发生变化。</li>
 </ul>
 <h3 id="3-1-4-门控D锁存器"><a href="#3-1-4-门控D锁存器" class="headerlink" title="3.1.4 门控D锁存器"></a>3.1.4 门控D锁存器</h3><p><img src="https://i.loli.net/2021/10/30/s6TWw7yLY41zRvF.jpg" srcset="/img/loading.gif" lazyload alt="06DFE5DF883EDC5CA5FD7D0C856DE618.jpg"></p>
 <ul>
@@ -488,15 +488,14 @@
 </ul>
 <h3 id="3-2-3-JK触发器"><a href="#3-2-3-JK触发器" class="headerlink" title="3.2.3 JK触发器"></a>3.2.3 JK触发器</h3><p><img src="https://i.loli.net/2021/10/30/jXRoh9drMNWCUyp.jpg" srcset="/img/loading.gif" lazyload alt="71CC55A6-D1CA-4672-8AB9-E3D46338014F.png"></p>
 <ul>
-<li>JK触发器和SR触发器在置1，置0和保持这几个方面的功能是完全一样的，但JK触发器优化了SR触发器状态不稳的情况。现在当$JK=11$时，无论触发器的状态目前是什么，都会变成另一个。<strong>JK触发器的特征方程非常重要：</strong><br>$$<br>  Q^{n+1}=J\overline{Q^n}+\overline{K}Q^n<br>$$</li>
+<li>JK触发器和SR触发器在置1，置0和保持这几个方面的功能是完全一样的，但JK触发器优化了SR触发器状态不稳的情况。现在当$JK&#x3D;11$时，无论触发器的状态目前是什么，都会变成另一个。<strong>JK触发器的特征方程非常重要：</strong><br>$$<br>  Q^{n+1}&#x3D;J\overline{Q^n}+\overline{K}Q^n<br>$$<br><em><strong>注意</strong></em>：<em>JK触发器的J输入端如果什么都没有接，默认是1；如果输入端接了很多东西，默认是他们取与运算的结果作为输入</em></li>
 </ul>
-<p><em><strong>注意</strong></em>：<em>JK触发器的J输入端如果什么都没有接，默认是1；如果输入端接了很多东西，默认是他们取与运算的结果作为输入</em></p>
 <h2 id="3-3-寄存器和移位寄存器"><a href="#3-3-寄存器和移位寄存器" class="headerlink" title="3.3 寄存器和移位寄存器"></a>3.3 寄存器和移位寄存器</h2><h3 id="3-3-1-寄存器"><a href="#3-3-1-寄存器" class="headerlink" title="3.3.1 寄存器"></a>3.3.1 寄存器</h3><ul>
 <li>课本上介绍了两种寄存器，一种由D锁存器组成，一种由D触发器组成，原理区别不大，这里仅分析D触发器组成的寄存器（74LS374）。<br><img src="https://i.loli.net/2021/10/30/c2taziWrSHjRGb1.jpg" srcset="/img/loading.gif" lazyload alt="6F479198-A818-4C8B-96C3-1B40EDA2C1BC.png"><br>当输出控制是0时，寄存器会输出，输出什么取决于当前寄存器自身的状态。如果不在上升沿，则输出上次改变之后完之后的状态；如果在上升沿，那么根据当前的输入D输出改变后的状态。当输出控制是1的时候，寄存器不会输出。在寄存器不输出的时候讨论它的状态变化是没有意义的，因为D触发器的状态只与当前时刻的输入有关，与上一状态无关，如果到了某一个上升沿，输出控制变为0，此时再输出输入的D的值也是来得及的。</li>
 </ul>
 <h3 id="3-3-2-移位寄存器"><a href="#3-3-2-移位寄存器" class="headerlink" title="3.3.2 移位寄存器"></a>3.3.2 移位寄存器</h3><ul>
 <li>在时钟信号的控制下，将所寄存的数据向左或向右移位的寄存器称为<strong>移位寄存器</strong>。</li>
-<li>下图是4位右移寄存器的逻辑图。它的构成很简单，只需把左边一位的输出端接到右边一位的输入端即可，即连接关系满足$D_i=Q_{i-1}$，同时把所有触发器的时钟端连接在一起，用同步脉冲信号控制。<br><img src="https://i.loli.net/2021/10/30/IrfoJtuLkmOhlMc.jpg" srcset="/img/loading.gif" lazyload alt="9750D85B-ED2E-4271-BE9F-CF4F40B36C73.png"></li>
+<li>下图是4位右移寄存器的逻辑图。它的构成很简单，只需把左边一位的输出端接到右边一位的输入端即可，即连接关系满足$D_i&#x3D;Q_{i-1}$，同时把所有触发器的时钟端连接在一起，用同步脉冲信号控制。<br><img src="https://i.loli.net/2021/10/30/IrfoJtuLkmOhlMc.jpg" srcset="/img/loading.gif" lazyload alt="9750D85B-ED2E-4271-BE9F-CF4F40B36C73.png"></li>
 <li>但实际应用中常常采用中规模通用移位寄存器，如下图所示的74LS299:<br><img src="https://i.loli.net/2021/10/30/BFYLlmwceavAGbZ.jpg" srcset="/img/loading.gif" lazyload alt="A27C2D1F-FDF6-4F62-B329-ADAE03D51586.png"><br>这个东西有四种工作模式：并行置数、左移、右移、保持数据，可以实现并入并出，并入串出，串入串出，串入并出操作。</li>
 </ul>
 <h2 id="3-4-计数器"><a href="#3-4-计数器" class="headerlink" title="3.4 计数器"></a>3.4 计数器</h2><p><strong>计数器</strong>的功能是记忆脉冲的个数。</p>
@@ -505,11 +504,11 @@
 </ul>
 <ol>
 <li>用计数方式构成的同步计数器<ul>
-<li>下图所示为3位同步模8计数器逻辑图：<br><img src="https://i.loli.net/2021/10/30/Jn31ARxMj5V6fGO.jpg" srcset="/img/loading.gif" lazyload alt="E5774C7D-A5DA-45BE-A6D1-BF61D9CB2FCC.png"><br>由逻辑电路图可知，每次时钟沿到来时$J_0K_0$都为11，也就是说$FF_0$的状态每次都会改变。而$FF_1$只会在每次$Q_0$为1的时候才改变，$FF_2$则只会在$Q_0Q_1=11$时改变。这恰好符合000，001，010…,111，000，…的顺序。</li>
+<li>下图所示为3位同步模8计数器逻辑图：<br> <img src="https://i.loli.net/2021/10/30/Jn31ARxMj5V6fGO.jpg" srcset="/img/loading.gif" lazyload alt="E5774C7D-A5DA-45BE-A6D1-BF61D9CB2FCC.png"><br> 由逻辑电路图可知，每次时钟沿到来时$J_0K_0$都为11，也就是说$FF_0$的状态每次都会改变。而$FF_1$只会在每次$Q_0$为1的时候才改变，$FF_2$则只会在$Q_0Q_1&#x3D;11$时改变。这恰好符合000，001，010…,111，000，…的顺序。</li>
 </ul>
 </li>
 <li>用移位寄存器构成的同步计数器<ul>
-<li>计数器也可以由移位寄存器构成。这时要求移位寄存器有$M$个状态，分别于$M$个计数脉冲相对应，并且不断在这$M$个状态中循环。<br><img src="https://i.loli.net/2021/10/30/u6XlLCF2G1rkAID.jpg" srcset="/img/loading.gif" lazyload alt="D47CD878-DB24-4AF5-A064-7EDAA19A58D1.png"><br><img src="https://i.loli.net/2021/10/30/q2mV6vithX5GQzF.jpg" srcset="/img/loading.gif" lazyload alt="46D6C63D-A89A-4512-BF0A-01B739F4A468.png"></li>
+<li>计数器也可以由移位寄存器构成。这时要求移位寄存器有$M$个状态，分别于$M$个计数脉冲相对应，并且不断在这$M$个状态中循环。<br> <img src="https://i.loli.net/2021/10/30/u6XlLCF2G1rkAID.jpg" srcset="/img/loading.gif" lazyload alt="D47CD878-DB24-4AF5-A064-7EDAA19A58D1.png"><br> <img src="https://i.loli.net/2021/10/30/q2mV6vithX5GQzF.jpg" srcset="/img/loading.gif" lazyload alt="46D6C63D-A89A-4512-BF0A-01B739F4A468.png"></li>
 <li>若最后是$Q_2$反馈，而不是$\overline{Q_2}$反馈，那就需要一个强制端PRE或CLR设置原始状态，因为不能出现000或111。</li>
 </ul>
 </li>
@@ -518,7 +517,7 @@
 <li>以74LS163为例：<br><img src="https://i.loli.net/2021/10/30/csDVoOxvnytFPAb.jpg" srcset="/img/loading.gif" lazyload alt="60CF1E89-DE39-4D7A-AB64-9D383BA11714.png"><br><img src="https://i.loli.net/2021/10/30/IezaRkdW27SBN3m.jpg" srcset="/img/loading.gif" lazyload alt="3260775B-4D88-436B-A776-6D88C0BB8E4C.png"><br>在上升沿时，判断计数器执行什么功能：<ol>
 <li>先看<strong>清除端</strong>，如果清除为低电平，则无论其他是什么，直接把所有触发器置0；</li>
 <li>若清除端为高电平，再看<strong>预置端（$\overline{LD}$）</strong>，若预置端为低电平，则无论其他是什么，都把所有触发器置为预设值dcba。</li>
-<li>若清除端为高电平，预置端也为低电平，再看<strong>使能端（$PT$）</strong>。若使能端为0，则什么都不做，若使能端为1，则计数。<br>它的逻辑可以用一串<code>if-else</code>的嵌套描述<figure class="highlight c"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// !表示低电平有效</span><br><span class="hljs-keyword">if</span> (!clear)<br>    所有触发器置<span class="hljs-number">0</span>;<br><span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-keyword">if</span> (!LD)<br>        所有触发器值预设值;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">if</span>(PT)<br>            计数;<br>        <span class="hljs-keyword">else</span><br>            什么都不做;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<li>若清除端为高电平，预置端也为低电平，再看<strong>使能端（$PT$）</strong>。若使能端为0，则什么都不做，若使能端为1，则计数。<br> 它的逻辑可以用一串<code>if-else</code>的嵌套描述 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// !表示低电平有效</span><br><span class="hljs-keyword">if</span> (!clear)<br>    所有触发器置<span class="hljs-number">0</span>;<br><span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-keyword">if</span> (!LD)<br>        所有触发器值预设值;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">if</span>(PT)<br>            计数;<br>        <span class="hljs-keyword">else</span><br>            什么都不做;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 其他的同步计数器功能类似。</li>
 </ol>
 <ul>
@@ -577,19 +576,19 @@
 <ol>
 <li><strong>一对一法</strong><ul>
 <li>有4个状态，用4个触发器$Q_0$~$Q_3$。</li>
-<li>$S_0$对应$Q_3Q_2Q_1Q_0=0001$;</li>
-<li>$S_1$对应$Q_3Q_2Q_1Q_0=0010$;</li>
-<li>$S_2$对应$Q_3Q_2Q_1Q_0=0100$;</li>
-<li>$S_3$对应$Q_3Q_2Q_1Q_0=1000$;</li>
+<li>$S_0$对应$Q_3Q_2Q_1Q_0&#x3D;0001$;</li>
+<li>$S_1$对应$Q_3Q_2Q_1Q_0&#x3D;0010$;</li>
+<li>$S_2$对应$Q_3Q_2Q_1Q_0&#x3D;0100$;</li>
+<li>$S_3$对应$Q_3Q_2Q_1Q_0&#x3D;1000$;</li>
 <li>触发器多，逻辑简单</li>
 </ul>
 </li>
 <li><strong>计数器法</strong><ul>
 <li>有4个状态，用2个触发器$Q_2Q_1$</li>
-<li>$S_0$对应$Q_2Q_1=00$;</li>
-<li>$S_1$对应$Q_2Q_1=01$;</li>
-<li>$S_2$对应$Q_2Q_1=10$;</li>
-<li>$S_3$对应$Q_2Q_1=11$;</li>
+<li>$S_0$对应$Q_2Q_1&#x3D;00$;</li>
+<li>$S_1$对应$Q_2Q_1&#x3D;01$;</li>
+<li>$S_2$对应$Q_2Q_1&#x3D;10$;</li>
+<li>$S_3$对应$Q_2Q_1&#x3D;11$;</li>
 <li>触发器少，逻辑复杂</li>
 </ul>
 </li>
@@ -609,9 +608,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E4%B8%8E%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F/">#数字逻辑与数字系统</a>
-      
         <a href="/tags/%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B/">#学校课程</a>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E4%B8%8E%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F/">#数字逻辑与数字系统</a>
       
     </div>
   

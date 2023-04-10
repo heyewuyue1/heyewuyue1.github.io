@@ -16,12 +16,12 @@
   <meta name="author" content="何夜舞月">
   <meta name="keywords" content="">
   
-    <meta name="description" content="第一章 Introduction1.3 View of Data Data Model 对数据组织与管理&#x2F;使用方式的抽象描述，包括： 数据组织的语法定义，如数据项、数据项间的联系 数据组织的语义定义，如完整性约束   例子： Relation Model（最典型的表格） XML     Levels of Abstraction Physical level: 描述数据实际是怎么存的，一个块多大，">
+    <meta name="description" content="第一章 Introduction1.3 View of Data Data Model 对数据组织与管理&#x2F;使用方式的抽象描述，包括： 数据组织的语法定义，如数据项、数据项间的联系 数据组织的语义定义，如完整性约束   例子： Relation Model（最典型的表格） XML     Levels of Abstraction Physical level: 描述数据实际是怎么存的，一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库系统原理">
 <meta property="og:url" content="https://heyewuyue1.github.io/2022/09/16/DatabaseSystemConcepts/index.html">
 <meta property="og:site_name" content="何夜舞月">
-<meta property="og:description" content="第一章 Introduction1.3 View of Data Data Model 对数据组织与管理&#x2F;使用方式的抽象描述，包括： 数据组织的语法定义，如数据项、数据项间的联系 数据组织的语义定义，如完整性约束   例子： Relation Model（最典型的表格） XML     Levels of Abstraction Physical level: 描述数据实际是怎么存的，一个块多大，">
+<meta property="og:description" content="第一章 Introduction1.3 View of Data Data Model 对数据组织与管理&#x2F;使用方式的抽象描述，包括： 数据组织的语法定义，如数据项、数据项间的联系 数据组织的语义定义，如完整性约束   例子： Relation Model（最典型的表格） XML     Levels of Abstraction Physical level: 描述数据实际是怎么存的，一">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-16T08:01:43.000Z">
 <meta property="article:modified_time" content="2022-09-19T02:06:47.051Z">
@@ -290,7 +290,7 @@
                 
                 <h1 id="第一章-Introduction"><a href="#第一章-Introduction" class="headerlink" title="第一章 Introduction"></a>第一章 Introduction</h1><h2 id="1-3-View-of-Data"><a href="#1-3-View-of-Data" class="headerlink" title="1.3 View of Data"></a>1.3 View of Data</h2><ul>
 <li>Data Model<ul>
-<li>对数据组织与管理/使用方式的抽象描述，包括：<ul>
+<li>对数据组织与管理&#x2F;使用方式的抽象描述，包括：<ul>
 <li>数据组织的语法定义，如数据项、数据项间的联系</li>
 <li>数据组织的语义定义，如完整性约束</li>
 </ul>
@@ -304,7 +304,7 @@
 </li>
 <li>Levels of Abstraction<ul>
 <li>Physical level: 描述数据<strong>实际</strong>是怎么存的，一个块多大，存在存储器的什么位置，索引。</li>
-<li>Logic level: 描述数据的逻辑关系<figure class="highlight sql"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs sql">type instructor <span class="hljs-operator">=</span> record<br>ID: string;<br>name: string;<br>dept_name: string;<br>salary: <span class="hljs-type">integer</span>;<br><span class="hljs-keyword">end</span>;<br></code></pre></td></tr></table></figure></li>
+<li>Logic level: 描述数据的逻辑关系<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql">type instructor <span class="hljs-operator">=</span> record<br>ID: string;<br>name: string;<br>dept_name: string;<br>salary: <span class="hljs-type">integer</span>;<br><span class="hljs-keyword">end</span>;<br></code></pre></td></tr></table></figure></li>
 <li>View level: 应用层查看到的数据，可以隐藏一些细节，比如数据类型，或者出于隐私考虑隐藏<code>salary</code>字段。</li>
 </ul>
 </li>
@@ -321,7 +321,7 @@
 </li>
 </ul>
 <h1 id="第二章-Introduction-to-Relational-Model"><a href="#第二章-Introduction-to-Relational-Model" class="headerlink" title="第二章 Introduction to Relational Model"></a>第二章 Introduction to Relational Model</h1><h2 id="2-1-Relational-Database的结构"><a href="#2-1-Relational-Database的结构" class="headerlink" title="2.1 Relational Database的结构"></a>2.1 Relational Database的结构</h2><ul>
-<li>$R=(A_1, A_2, \cdots, A_n)$ 是一个relation schema</li>
+<li>$R&#x3D;(A_1, A_2, \cdots, A_n)$ 是一个relation schema</li>
 <li>其中:<ul>
 <li>$A_1, A_2, \cdots, A_n$是attributes</li>
 <li>$A_i$的取值范围是$D_i$，叫做domain</li>
