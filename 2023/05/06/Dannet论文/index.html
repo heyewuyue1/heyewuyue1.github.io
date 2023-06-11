@@ -16,31 +16,25 @@
   <meta name="author" content="何夜舞月">
   <meta name="keywords" content="">
   
-    <meta name="description" content="来点传统手写笔记">
+    <meta name="description" content="标题：一个一步到位的领域迁移网络，用于无监督的夜视场景语义分割 Abstract夜视场景语义分割因为光照条件差，且缺乏人工标注的数据集所以一直是一个难题。本文提供了一个可以不使用人工标注的数据集就可以训练的夜视场景语义分割网络。它使用了一个有标注的白天数据集，和一个未标注的数据集（其中包括很多对相同场景的白天夜晚对应的图片）来进行对抗式学习。对于每一个白天-夜晚pair，先在白天的图片上进行分割，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件工程">
-<meta property="og:url" content="https://heyewuyue1.github.io/2023/04/10/SoftwareEngineer/index.html">
+<meta property="og:title" content="Dannet论文">
+<meta property="og:url" content="https://heyewuyue1.github.io/2023/05/06/Dannet%E8%AE%BA%E6%96%87/index.html">
 <meta property="og:site_name" content="何夜舞月">
-<meta property="og:description" content="来点传统手写笔记">
+<meta property="og:description" content="标题：一个一步到位的领域迁移网络，用于无监督的夜视场景语义分割 Abstract夜视场景语义分割因为光照条件差，且缺乏人工标注的数据集所以一直是一个难题。本文提供了一个可以不使用人工标注的数据集就可以训练的夜视场景语义分割网络。它使用了一个有标注的白天数据集，和一个未标注的数据集（其中包括很多对相同场景的白天夜晚对应的图片）来进行对抗式学习。对于每一个白天-夜晚pair，先在白天的图片上进行分割，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://api2.mubu.com/v3/document_image/4a8098c1-88aa-48f5-87f0-c4a9fac204f4-15002533.jpg">
-<meta property="og:image" content="https://api2.mubu.com/v3/document_image/b219dda4-b91c-4bec-b00b-a953d49d2952-15002533.jpg">
-<meta property="og:image" content="https://api2.mubu.com/v3/document_image/381522e0-6329-4540-bcac-17396d270015-15002533.jpg">
-<meta property="og:image" content="https://api2.mubu.com/v3/document_image/661c76b0-0b41-4397-8079-cd556af22dc8-15002533.jpg">
-<meta property="og:image" content="https://api2.mubu.com/v3/document_image/f8583f94-f3ba-427b-aeee-b4b6cd7d50ec-15002533.jpg">
-<meta property="og:image" content="https://api2.mubu.com/v3/document_image/bbb2d461-5cf1-426d-b4b2-86096b419d41-15002533.jpg">
-<meta property="og:image" content="https://api2.mubu.com/v3/document_image/69159b4e-1c74-46d5-afc9-249e38db42a9-15002533.jpg">
-<meta property="article:published_time" content="2023-04-10T09:54:19.000Z">
-<meta property="article:modified_time" content="2023-04-13T00:10:19.664Z">
+<meta property="og:image" content="https://p.ipic.vip/iky8nb.png">
+<meta property="article:published_time" content="2023-05-06T07:15:29.000Z">
+<meta property="article:modified_time" content="2023-05-16T07:00:49.028Z">
 <meta property="article:author" content="何夜舞月">
-<meta property="article:tag" content="学校课程">
-<meta property="article:tag" content="软件工程">
+<meta property="article:tag" content="计算机视觉">
+<meta property="article:tag" content="读论文">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://api2.mubu.com/v3/document_image/4a8098c1-88aa-48f5-87f0-c4a9fac204f4-15002533.jpg">
+<meta name="twitter:image" content="https://p.ipic.vip/iky8nb.png">
   
   
   
-  <title>软件工程 - 何夜舞月</title>
+  <title>Dannet论文 - 何夜舞月</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -218,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="软件工程"></span>
+            <span id="subtitle" data-typed-text="Dannet论文"></span>
           
         </div>
 
@@ -229,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-10 17:54" pubdate>
-          2023年4月10日 下午
+        <time datetime="2023-05-06 15:15" pubdate>
+          2023年5月6日 下午
         </time>
       </span>
     
@@ -242,7 +236,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          8 字
+          1.1k 字
         
       </span>
     
@@ -254,7 +248,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -292,13 +286,20 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">软件工程</h1>
+            <h1 style="display: none">Dannet论文</h1>
             
             
               <div class="markdown-body">
                 
-                <p>来点传统手写笔记</p>
-<p><img src="https://api2.mubu.com/v3/document_image/4a8098c1-88aa-48f5-87f0-c4a9fac204f4-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/b219dda4-b91c-4bec-b00b-a953d49d2952-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/381522e0-6329-4540-bcac-17396d270015-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/661c76b0-0b41-4397-8079-cd556af22dc8-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/f8583f94-f3ba-427b-aeee-b4b6cd7d50ec-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/bbb2d461-5cf1-426d-b4b2-86096b419d41-15002533.jpg" srcset="/img/loading.gif" lazyload><br><img src="https://api2.mubu.com/v3/document_image/69159b4e-1c74-46d5-afc9-249e38db42a9-15002533.jpg" srcset="/img/loading.gif" lazyload></p>
+                <p>标题：一个<strong>一步到位的</strong>领域迁移网络，用于<strong>无监督</strong>的夜视场景语义分割</p>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>夜视场景语义分割因为光照条件差，且缺乏人工标注的数据集所以一直是一个难题。本文提供了一个可以不使用人工标注的数据集就可以训练的夜视场景语义分割网络。它使用了一个有标注的白天数据集，和一个未标注的数据集（其中包括很多对相同场景的白天夜晚对应的图片）来进行对抗式学习。对于每一个白天-夜晚pair，先在白天的图片上进行分割，得到的结果来监督训练分割夜晚场景。我们还设计了一个重新调整权重的策略，去解决白天夜晚图片本身的不匹配和对于白天图像分割的失误，同时增强了对小物件的识别。DANNet并不会再去训练一个单独的网络来转换白天黑夜的图片作为预处理，他是一个一步到位的网络。</p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h2><p>前人尝试过的策略：<br>    - 使用一个黄昏数据集作为白天到夜晚的桥梁<br>    - 单独训练一个网络来转换白天和黑夜的图片<br>共同的缺点：<br>    - 都要很麻烦的预处理。<br>    - 使得迁移之后训练的结果高度依赖于迁移之前的领域</p>
+<p>Cityscapes：有很多标注好的白天数据集<br>Dark Zurich-D：没有标注的白天数据集<br>Dark Zurich-N：没有标注的夜晚数据集<br>Dark Zurich-D和Dark Zurich-N中的图片可以一一配对。</p>
+<p>所以就先用Cityscapes训练好的model应用到Dark Zurich-D上，得到的结果用于监督Dark Zurich-N上的训练。</p>
+<p>然后我们用了一个relighting网络先让不同领域之间的图片尽量相近一些，然后再对这些图片使用相同的分割网络进行分割。最后在输出的时候使用一个对抗学习。</p>
+<p><img src="https://p.ipic.vip/iky8nb.png" srcset="/img/loading.gif" lazyload alt="image-20230506154145771"></p>
+<p>$I_s,I_{td},I_{tn}$就是分别从Cityscapes和Dark Zurich-D和Dark Zurich-N中取的。然后他们三个图片统一经过一个同一个重光照网络之后变得更像了，这一步都使用的是$L_{light}$。然后再都经过同一个分割网络产生分割结果。这一步不同的地方在于：<br>    - 从$I_s$来的图片有ground truth，可以直接使用ground truth算loss进行训练<br>    - 从$I_{td}$和$I_{tn}$来的图片没有ground truth，他们两个首先会在图像优化方面（比如让图片更清晰，对小物件识别灵敏度更高）上共用一个$L_{static}$的loss，这个loss和分类的正确性无关。然后同时也把结果输出给两个discrimminator（$D_d$和$D_n$），让他们去评判输出的结果到底是从$I_s$出来的，还是从$I_{td}$和$I_{tn}$出来的。这样做最后达到的效果就是，图像质量本身品质又高，又像是从$I_s$来的一样。</p>
+<p><strong>discriminator是怎么工作的？</strong></p>
 
                 
               </div>
@@ -311,9 +312,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B/">#学校课程</a>
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">#计算机视觉</a>
       
-        <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">#软件工程</a>
+        <a href="/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/">#读论文</a>
       
     </div>
   
@@ -325,8 +326,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>软件工程</div>
-      <div>https://heyewuyue1.github.io/2023/04/10/SoftwareEngineer/</div>
+      <div>Dannet论文</div>
+      <div>https://heyewuyue1.github.io/2023/05/06/Dannet论文/</div>
     </div>
     <div class="license-meta">
       
@@ -338,7 +339,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月10日</div>
+          <div>2023年5月6日</div>
         </div>
       
       
@@ -370,18 +371,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" title="数据结构复习">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数据结构复习</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/16/DatabaseSystemConcepts/" title="数据库系统原理">
-                        <span class="hidden-mobile">数据库系统原理</span>
+                      <a href="/2023/05/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" title="数据结构复习">
+                        <span class="hidden-mobile">数据结构复习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
