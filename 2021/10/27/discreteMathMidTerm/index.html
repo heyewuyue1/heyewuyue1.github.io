@@ -37,9 +37,8 @@
 <meta property="og:image" content="https://api2.mubu.com/v3/document_image/a6013c3c-47a9-4be8-ae76-22cca90d33f1-15002533.jpg">
 <meta property="og:image" content="https://api2.mubu.com/v3/document_image/ed5a75d2-ada6-47df-9ee6-248c5efbdb22-15002533.jpg">
 <meta property="article:published_time" content="2021-10-27T02:29:46.000Z">
-<meta property="article:modified_time" content="2023-04-10T09:55:43.425Z">
+<meta property="article:modified_time" content="2023-07-23T09:36:45.528Z">
 <meta property="article:author" content="何夜舞月">
-<meta property="article:tag" content="学校课程">
 <meta property="article:tag" content="离散数学">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://api2.mubu.com/v3/document_image/1aa45386-df6d-408d-af2f-a36339b411cc-14970684.jpg">
@@ -588,14 +587,33 @@
 <ul>
 <li><strong>推论</strong>：$e_H(B^m)&#x3D;\{e_H(b)|b\in B^m\}$是$B^n$的一个子群。<br>至此，我们终于得到了一种可以稳定构造群码的方法，即：构造一个奇偶校验矩阵，用$B^m$中的每一个元素乘以它的前m行，得到的$B^r$拼接在他的后面，便是一套群码。并且通过这样的方法得到的$B^n* H$一定等于$\overline{0}$。</li>
 </ul>
-<h3 id="11-2-译码与纠错"><a href="#11-2-译码与纠错" class="headerlink" title="11.2 译码与纠错"></a>11.2 译码与纠错</h3><h2 id="在上一节，我们很好的利用群码已经解决了作为发送方该如何编码的问题，本节解决接收方如何译码的问题。译码函数：一个满射函数-d-B-n-rightarrow-B-m-称作是与-e-有关的译码函数，若-d-x-t-x3D-b’-in-B-m-使得当传输通道没有任何噪声时，-b’-x3D-b-。-注意到课本原文强调-d-是一个满射函数，而同时没有讲他不是一个单射函数。事实上-d-必不是一个单射函数，他的定义域需要覆盖-B-n-中所有的元素，因为一定有许多不同的-B-n-对应同一个-B-m-。设-e-是一个-m-n-编码函数，-d-是一个与-e-相关的-n-m-译码函数。如果无论-x-x3D-e-b-正确的传输或产生了-k-个或-k-个以下的错误并接收到的是-x-t-，都有-d-x-t-x3D-b-，则称数据对-e-b-可以矫正-k-个或更少的错误。"><a href="#在上一节，我们很好的利用群码已经解决了作为发送方该如何编码的问题，本节解决接收方如何译码的问题。译码函数：一个满射函数-d-B-n-rightarrow-B-m-称作是与-e-有关的译码函数，若-d-x-t-x3D-b’-in-B-m-使得当传输通道没有任何噪声时，-b’-x3D-b-。-注意到课本原文强调-d-是一个满射函数，而同时没有讲他不是一个单射函数。事实上-d-必不是一个单射函数，他的定义域需要覆盖-B-n-中所有的元素，因为一定有许多不同的-B-n-对应同一个-B-m-。设-e-是一个-m-n-编码函数，-d-是一个与-e-相关的-n-m-译码函数。如果无论-x-x3D-e-b-正确的传输或产生了-k-个或-k-个以下的错误并接收到的是-x-t-，都有-d-x-t-x3D-b-，则称数据对-e-b-可以矫正-k-个或更少的错误。" class="headerlink" title="在上一节，我们很好的利用群码已经解决了作为发送方该如何编码的问题，本节解决接收方如何译码的问题。译码函数：一个满射函数$d:B^n\rightarrow B^m$称作是与$e$有关的译码函数，若$d(x_t)&#x3D;b’\in B^m$使得当传输通道没有任何噪声时，$b’&#x3D;b$。- 注意到课本原文强调$d$是一个满射函数，而同时没有讲他不是一个单射函数。事实上$d$必不是一个单射函数，他的定义域需要覆盖$B^n$中所有的元素，因为一定有许多不同的$B^n$对应同一个$B^m$。设$e$是一个$(m,n)$编码函数，$d$是一个与$e$相关的$(n,m)$译码函数。如果无论$x&#x3D;e(b)$正确的传输或产生了$k$个或$k$个以下的错误并接收到的是$x_t$，都有$d(x_t)&#x3D;b$，则称数据对$(e,b)$可以矫正$k$个或更少的错误。"></a>在上一节，我们很好的利用群码已经解决了作为发送方该如何编码的问题，本节解决接收方如何译码的问题。<br><strong>译码函数</strong>：一个满射函数$d:B^n\rightarrow B^m$称作是与$e$有关的译码函数，若$d(x_t)&#x3D;b’\in B^m$使得当传输通道没有任何噪声时，$b’&#x3D;b$。<br>- 注意到课本原文强调$d$是一个满射函数，而同时没有讲他不是一个单射函数。事实上$d$必不是一个单射函数，他的定义域需要覆盖$B^n$中所有的元素，因为一定有许多不同的$B^n$对应同一个$B^m$。<br>设$e$是一个$(m,n)$编码函数，$d$是一个与$e$相关的$(n,m)$译码函数。如果无论$x&#x3D;e(b)$正确的传输或产生了$k$个或$k$个以下的错误并接收到的是$x_t$，都有$d(x_t)&#x3D;b$，则称数据对$(e,b)$可以<strong>矫正$k$个或更少的错误</strong>。</h2><h2 id="下面开始介绍一种可以通过编码函数-e-得到相应的译码函数-d-的方法，被称为最大似然方法。因为-B-m-有-2-m-个元素，所以-B-n-中也有-2-m-个元素与之对应，我们先把这-2-m-个元素按照某种次序排列。-x-1-x-2-cdots-x-2-m-如果接收到的字是-x-t-，那么对于-1-leq-i-leq-2-m-，计算-delta-x-i-x-t-并且选取第一个代码字，譬如说-x-s-使得-rm-min-1-leq-i-leq-2-m-delta-x-i-x-t-x3D-delta-x-s-x-t-即：-x-s-是按照当前次序中第一个和-x-t-最接近的码字。所以根据一开始排列顺序的不同，会得到不同的译码规则。定理：假设-e-是一个-m-n-编码函数，-d-是与-e-相关的最大似然译码函数，那么-e-d-能纠正-k-个或更少的错误，当且仅当-e-的距离至少是-2k-1-。定理：如果-K-是群-G-的一个有限子群，那么-G-中-K-每一个左陪集与-K-恰好有同样多的元素。"><a href="#下面开始介绍一种可以通过编码函数-e-得到相应的译码函数-d-的方法，被称为最大似然方法。因为-B-m-有-2-m-个元素，所以-B-n-中也有-2-m-个元素与之对应，我们先把这-2-m-个元素按照某种次序排列。-x-1-x-2-cdots-x-2-m-如果接收到的字是-x-t-，那么对于-1-leq-i-leq-2-m-，计算-delta-x-i-x-t-并且选取第一个代码字，譬如说-x-s-使得-rm-min-1-leq-i-leq-2-m-delta-x-i-x-t-x3D-delta-x-s-x-t-即：-x-s-是按照当前次序中第一个和-x-t-最接近的码字。所以根据一开始排列顺序的不同，会得到不同的译码规则。定理：假设-e-是一个-m-n-编码函数，-d-是与-e-相关的最大似然译码函数，那么-e-d-能纠正-k-个或更少的错误，当且仅当-e-的距离至少是-2k-1-。定理：如果-K-是群-G-的一个有限子群，那么-G-中-K-每一个左陪集与-K-恰好有同样多的元素。" class="headerlink" title="下面开始介绍一种可以通过编码函数$e$得到相应的译码函数$d$的方法，被称为最大似然方法。因为$B^m$有$2^m$个元素，所以$B^n$中也有$2^m$个元素与之对应，我们先把这$2^m$个元素按照某种次序排列。$$    x^{(1)},x^{(2)},\cdots,x^{(2^m)}$$如果接收到的字是$x_t$，那么对于$1\leq i\leq 2^m$，计算$\delta (x^{(i)},x_t)$并且选取第一个代码字，譬如说$x^{(s)}$使得$$    {\rm{min}}_{1\leq i\leq 2^m}\{\delta(x^{(i)},x_t)\}&#x3D;\delta(x^{(s)},x_t)$$即：$x^{(s)}$是按照当前次序中第一个和$x_t$最接近的码字。所以根据一开始排列顺序的不同，会得到不同的译码规则。定理：假设$e$是一个$(m,n)$编码函数，$d$是与$e$相关的最大似然译码函数，那么$(e,d)$能纠正$k$个或更少的错误，当且仅当$e$的距离至少是$2k+1$。定理：如果$K$是群$G$的一个有限子群，那么$G$中$K$每一个左陪集与$K$恰好有同样多的元素。"></a>下面开始介绍一种可以通过编码函数$e$得到相应的译码函数$d$的方法，被称为<strong>最大似然方法</strong>。<br>因为$B^m$有$2^m$个元素，所以$B^n$中也有$2^m$个元素与之对应，我们先把这$2^m$个元素按照某种次序排列。<br>$$<br>    x^{(1)},x^{(2)},\cdots,x^{(2^m)}<br>$$<br>如果接收到的字是$x_t$，那么对于$1\leq i\leq 2^m$，计算$\delta (x^{(i)},x_t)$并且选取第一个代码字，譬如说$x^{(s)}$使得<br>$$<br>    {\rm{min}}_{1\leq i\leq 2^m}\{\delta(x^{(i)},x_t)\}&#x3D;\delta(x^{(s)},x_t)<br>$$<br>即：$x^{(s)}$是按照当前次序中第一个和$x_t$最接近的码字。<br><em>所以根据一开始排列顺序的不同，会得到不同的译码规则</em>。<br><strong>定理</strong>：假设$e$是一个$(m,n)$编码函数，$d$是与$e$相关的最大似然译码函数，那么$(e,d)$能纠正$k$个或更少的错误，当且仅当$e$的距离至少是$2k+1$。<br><strong>定理</strong>：如果$K$是群$G$的一个有限子群，那么$G$中$K$每一个左陪集与$K$恰好有同样多的元素。</h2><p>下面开始关注$e$是一个$(m,n)$编码函数，且是一个群码的情况，设它的代码字集合$N$是$B^n$的一个子群，$N&#x3D;\{x^{(1)},x^{(2)},\cdots,x^{(2^m)}\}$。<br>假设代码字$x&#x3D;e(b)$接收到的字是$x_t$。$N$由$x_t$确定的左陪集是：<br>$$<br>    x_t\oplus N&#x3D;\{\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_{2^m}\}<br>$$<br>从代码字$x_t$到$x^{(i)}$的距离恰好就是$|\varepsilon_i|$，因此若$\varepsilon_j$是有最小权的陪集成员，那么$x^{(j)}$一定是距离$x_t$最近的码字。在这种情况下$x^{(j)}&#x3D;x_t\oplus \varepsilon_j$。一个有最小权的陪集元素$\varepsilon_j$被称为<strong>陪集首部</strong>。注意，由于排列次序的不同，一个陪集的首部不一定是唯一的。<br>如果$e:B^m\rightarrow B^n$是一个群码，那么下面就是得到$e$的最大似然译码函数的步骤：</p>
+<h3 id="11-2-译码与纠错"><a href="#11-2-译码与纠错" class="headerlink" title="11.2 译码与纠错"></a>11.2 译码与纠错</h3><p>在上一节，我们很好的利用群码已经解决了作为发送方该如何编码的问题，本节解决接收方如何译码的问题。</p>
+<p><strong>译码函数</strong>：一个满射函数$d:B^n\rightarrow B^m$称作是与$e$有关的译码函数，若$d(x_t)&#x3D;b’\in B^m$使得当传输通道没有任何噪声时，$b’&#x3D;b$。</p>
+<ul>
+<li>注意到课本原文强调$d$是一个满射函数，而同时没有讲他不是一个单射函数。事实上$d$必不是一个单射函数，他的定义域需要覆盖$B^n$中所有的元素，因为一定有许多不同的$B^n$对应同一个$B^m$。<br>设$e$是一个$(m,n)$编码函数，$d$是一个与$e$相关的$(n,m)$译码函数。如果无论$x&#x3D;e(b)$正确的传输或产生了$k$个或$k$个以下的错误并接收到的是$x_t$，都有$d(x_t)&#x3D;b$，则称数据对$(e,b)$可以<strong>矫正$k$个或更少的错误</strong>。</li>
+</ul>
+<p>下面开始介绍一种可以通过编码函数$e$得到相应的译码函数$d$的方法，被称为<strong>最大似然方法</strong>。</p>
+<p>因为$B^m$有$2^m$个元素，所以$B^n$中也有$2^m$个元素与之对应，我们先把这$2^m$个元素按照某种次序排列。</p>
+<p>$$<br>    x^{(1)},x^{(2)},\cdots,x^{(2^m)}<br>$$</p>
+<p>如果接收到的字是$x_t$，那么对于$1\leq i\leq 2^m$，计算$\delta (x^{(i)},x_t)$并且选取第一个代码字，譬如说$x^{(s)}$使得</p>
+<p>$$<br>    {\rm{min}}_{1\leq i\leq 2^m}\{\delta(x^{(i)},x_t)\}&#x3D;\delta(x^{(s)},x_t)<br>$$</p>
+<p>即：$x^{(s)}$是按照当前次序中第一个和$x_t$最接近的码字。</p>
+<p><em>所以根据一开始排列顺序的不同，会得到不同的译码规则</em>。</p>
+<p><strong>定理</strong>：假设$e$是一个$(m,n)$编码函数，$d$是与$e$相关的最大似然译码函数，那么$(e,d)$能纠正$k$个或更少的错误，当且仅当$e$的距离至少是$2k+1$。</p>
+<p><strong>定理</strong>：如果$K$是群$G$的一个有限子群，那么$G$中$K$每一个左陪集与$K$恰好有同样多的元素。</p>
+<p>下面开始关注$e$是一个$(m,n)$编码函数，且是一个群码的情况，设它的代码字集合$N$是$B^n$的一个子群，$N&#x3D;\{x^{(1)},x^{(2)},\cdots,x^{(2^m)}\}$。<br>假设代码字$x&#x3D;e(b)$接收到的字是$x_t$。$N$由$x_t$确定的左陪集是：<br>$$<br>    x_t\oplus N&#x3D;\{\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_{2^m}\}<br>$$<br>从代码字$x_t$到$x^{(i)}$的距离恰好就是$|\varepsilon_i|$，因此若$\varepsilon_j$是有最小权的陪集成员，那么$x^{(j)}$一定是距离$x_t$最近的码字。在这种情况下$x^{(j)}&#x3D;x_t\oplus \varepsilon_j$。一个有最小权的陪集元素$\varepsilon_j$被称为<strong>陪集首部</strong>。注意，由于排列次序的不同，一个陪集的首部不一定是唯一的。<br>如果$e:B^m\rightarrow B^n$是一个群码，那么下面就是得到$e$的最大似然译码函数的步骤：</p>
 <ol>
 <li>确定$B^n$中$N&#x3D;e(B^m)$的所有左陪集。</li>
 <li>对于每个陪集求陪集首部。</li>
 <li>如果收到字$x_t$，那么确定$x_t$属于$N$的陪集。</li>
 <li>设$\varepsilon$是3.确定的陪集首部，计算$x_t\oplus \varepsilon$，那么$x_t$的译码就是$x_t\oplus \varepsilon$的译码。</li>
 </ol>
-<h2 id="由上述步骤1-2-确定的译码表如下所示：译码表中每一行都是一个陪集，共有-2-r-个；每一行的第一个元素都是这个陪集的陪集首部。在译码的时候只需要译-x-t-对应列首的元素即可。至此，已经得出了译一般群码的通用方法。"><a href="#由上述步骤1-2-确定的译码表如下所示：译码表中每一行都是一个陪集，共有-2-r-个；每一行的第一个元素都是这个陪集的陪集首部。在译码的时候只需要译-x-t-对应列首的元素即可。至此，已经得出了译一般群码的通用方法。" class="headerlink" title="由上述步骤1.2.确定的译码表如下所示：译码表中每一行都是一个陪集，共有$2^r$个；每一行的第一个元素都是这个陪集的陪集首部。在译码的时候只需要译$x_t$对应列首的元素即可。至此，已经得出了译一般群码的通用方法。"></a>由上述步骤1.2.确定的<strong>译码表</strong>如下所示：<br><img src="https://api2.mubu.com/v3/document_image/01253bc9-200a-42d7-9584-aeebb352fd8e-15002533.jpg" srcset="/img/loading.gif" lazyload><br>译码表中每一行都是一个陪集，共有$2^r$个；每一行的第一个元素都是这个陪集的陪集首部。<br>在译码的时候只需要译$x_t$对应列首的元素即可。<br>至此，已经得出了译一般群码的通用方法。</h2><p>下面介绍由特定的奇偶校验矩阵$H$确定的群码的译码方法。<br>由函数$f_H(x)&#x3D;x*H$定义的函数$f_H:B^n\rightarrow B^r$是$B^n$到$B^r$的一个同态。<br><strong>定理</strong>：由上述定义的函数同时是一个满射。<br>元素$x*H$称为$x$的<strong>校验子</strong>。<br><strong>定理</strong>：设$x$和$y$是$B^n$中的元素，他们两个属于同一个左陪集的充分必要条件是$f_H(x)&#x3D;f_H(y)$，即二者的校验子相同。<br>所以确定这种特殊的群码的译码函数的步骤如下：</p>
+<p>由上述步骤1.2.确定的<strong>译码表</strong>如下所示：</p>
+<p><img src="https://api2.mubu.com/v3/document_image/01253bc9-200a-42d7-9584-aeebb352fd8e-15002533.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>译码表中每一行都是一个陪集，共有$2^r$个；每一行的第一个元素都是这个陪集的陪集首部。</p>
+<p>在译码的时候只需要译$x_t$对应列首的元素即可。</p>
+<p>至此，已经得出了译一般群码的通用方法。</p>
+<p>下面介绍由特定的奇偶校验矩阵$H$确定的群码的译码方法。<br>由函数$f_H(x)&#x3D;x*H$定义的函数$f_H:B^n\rightarrow B^r$是$B^n$到$B^r$的一个同态。<br><strong>定理</strong>：由上述定义的函数同时是一个满射。<br>元素$x*H$称为$x$的<strong>校验子</strong>。<br><strong>定理</strong>：设$x$和$y$是$B^n$中的元素，他们两个属于同一个左陪集的充分必要条件是$f_H(x)&#x3D;f_H(y)$，即二者的校验子相同。<br>所以确定这种特殊的群码的译码函数的步骤如下：</p>
 <ol>
 <li>确定$B^n$中$N&#x3D;e_H(B^m)$的所有左陪集。</li>
 <li>对于每个陪集，求出陪集首部和他的校验子。</li>
@@ -713,8 +731,6 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B/">#学校课程</a>
-      
         <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">#离散数学</a>
       
     </div>
@@ -798,21 +814,20 @@
   
     <article id="comments" lazyload>
       
-  <div id="waline"></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/waline.min.css')
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/waline.min.js', function() {
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"https://blog-api-cj6zp2ml0-heyewuyue1.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"placeholder":"发表神谕","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"highlight":true},
+          {"appId":"11oAzRxDs3RCJDEayyPg7pRo-gzGzoHsz","appKey":"YbNNU9HE26IfTw0qq2VdpR0B","path":"window.location.pathname","placeholder":null,"avatar":null,"meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
           {
-            el: '#waline',
+            el: "#valine",
             path: window.location.pathname
           }
         )
-        Waline.init(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
           Fluid.plugins.fancyBox(imgSelector);
         })

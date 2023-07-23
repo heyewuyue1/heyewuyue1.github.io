@@ -24,7 +24,7 @@
 <meta property="og:description" content="要实现一个主页面和子页面来回跳转的功能，试图使用mainWindow.loadFIle()来加载子页面。但是这是主进程才能进行的操作，于是需要在渲染进程里当需要跳转的时候就广播出一个信号，当主进程监听到这个信号，就开始loadFile()。  代码实现 在主进程中和渲染进程中加入ipcMain和ipcRenderer。 在main.js中 1var &amp;#123;ipcMain&amp;#125; &#x3D; r">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-18T00:20:43.000Z">
-<meta property="article:modified_time" content="2022-09-12T04:07:58.978Z">
+<meta property="article:modified_time" content="2023-07-23T09:36:52.545Z">
 <meta property="article:author" content="何夜舞月">
 <meta property="article:tag" content="Electron">
 <meta name="twitter:card" content="summary_large_image">
@@ -407,21 +407,20 @@
   
     <article id="comments" lazyload>
       
-  <div id="waline"></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/waline.min.css')
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/waline.min.js', function() {
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"https://blog-api-cj6zp2ml0-heyewuyue1.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"placeholder":"发表神谕","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"highlight":true},
+          {"appId":"11oAzRxDs3RCJDEayyPg7pRo-gzGzoHsz","appKey":"YbNNU9HE26IfTw0qq2VdpR0B","path":"window.location.pathname","placeholder":null,"avatar":null,"meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
           {
-            el: '#waline',
+            el: "#valine",
             path: window.location.pathname
           }
         )
-        Waline.init(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
           Fluid.plugins.fancyBox(imgSelector);
         })
