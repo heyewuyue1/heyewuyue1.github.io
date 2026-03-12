@@ -31,6 +31,6 @@ I am a Ph.D. student in Computer Science at Renmin University of China, with a r
 
 ## Education
 
-BSc in computer science, 2020-2024, Beijing University of Posts and Telecommunications
-Ph.D. student in computer science, 2024- , Renmin University of China
+- Ph.D. student in computer science, 2024- , Renmin University of China
 
+- BSc in computer science, 2020-2024, BUPT
