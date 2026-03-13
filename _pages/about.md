@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: <a href='http://info.ruc.edu.cn/'>School of Information, Renmin University of China</a>
 
@@ -31,6 +31,6 @@ I am a Ph.D. student in Computer Science at Renmin University of China, with a r
 
 ## Education
 
-- Ph.D. student in computer science, 2024- , Renmin University of China
+- PhD student in computer science, 2024 - , Renmin University of China
 
-- BSc in computer science, 2020-2024, BUPT
+- BSc in computer science, 2020 - 2024, BUPT
