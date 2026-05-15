@@ -558,6 +558,49 @@ footer.sticky-bottom {
   }
 }
 
+.repo-fallback-card {
+  display: flex;
+  min-height: 120px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.2rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  background: var(--global-card-bg-color);
+  color: var(--global-text-color);
+}
+
+html:not([data-theme="dark"]) .repo-fallback-card.only-dark,
+html[data-theme="dark"] .repo-fallback-card.only-light {
+  display: none;
+}
+
+html[data-theme="dark"] .repo-fallback-card.only-dark {
+  display: flex;
+}
+
+.repo-fallback-card-user {
+  min-height: 195px;
+}
+
+.repo-fallback-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.repo-fallback-title {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+
+.repo-fallback-meta {
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+}
+
 // Blog
 
 .header-bar {
