@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://heyewuyue1.github.io/sitemap.xml
+Sitemap: https://ink.hywy1.ccwu.cc/sitemap.xml
