@@ -833,9 +833,8 @@ html[data-theme="dark"] .repo-fallback-card.only-dark {
           }
         }
 
-        > em {
-          border-bottom: 1px solid;
-          font-style: normal;
+        > strong {
+          font-weight: 700;
         }
 
         > span.more-authors {
